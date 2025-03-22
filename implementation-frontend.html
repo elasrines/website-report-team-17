@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>FinSync - System Architecture</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/flogoo.png" rel="icon">
+  <link href="assets/img/flogoo" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Arsha
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+
+
+</head>
+
+<body class="index-page">
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment below if you wish to use an image logo -->
+        <img src="assets/img/flogoo.png" alt="">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li class="dropdown"><a href="#hero"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#pitchvideo">Pitch Video</a></li>
+              <li><a href="#devteam">Our Dev Team</a></li>
+              <li><a href="#ganttchart">Our Gantt Chart</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="requirements.html"><span>Requirements</span> <i
+                class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#partnerintroandbg">Partner Introduction and Project background</a></li>
+              <li><a href="#projectgoals">Project Goals</a></li>
+              <li><a href="#reqgathering">Requirement gathering</a></li>
+              <li><a href="#personas">Personas</a></li>
+              <li><a href="#usecases">Use Cases</a></li>
+              <li><a href="#moscow">MoSCoW Requirements List</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Research</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#relatedprojects">Related Projects Review</a></li>
+              <li><a href="#technologyreview">Technology Review</a></li>
+              <li><a href="#summary">A summary of our technical decisions</a></li>
+              <li><a href="#references">References</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#"><span>Algorithms</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="uidesign.html"><span>UI Design</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#sketches">Sketches</a></li>
+              <li><a href="#wireframes">Wireframes</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#"><span>System Design</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="architecture.html">System architecture diagram</a></li>
+              <li><a href="#datastorage">Data storage</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#"><span>Implementation</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="implementation-frontend.html">Frontend Code</a></li>
+              <li><a href="implementation-backend.html">Backend Code</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#"><span>Testing</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#testingstrategy">Testing Strategy</a></li>
+              <li><a href="#unit-integration">Unit and integration testing</a></li>
+              <li><a href="#user-acceptance">User acceptance testing</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#"><span>Evaluation</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#summary-achievements">Summary of achievements</a></li>
+              <li><a href="#critical-evalutation">Critical evaluation of the project</a></li>
+              <li><a href="#future-work">Future Work</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#"><span>Appendices</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#user-manual">User Manual</a></li>
+              <li><a href="#deployment-manual">Deployment manual</a></li>
+              <li><a href="#legal">Legal issues and processes</a></li>
+              <li><a href="#deployment-blog">Development Blog</a></li>
+              <li><a href="#monthly-video">Monthly Video</a></li>
+
+            </ul>
+          </li>
+
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+            <h1>FinSync - Team 17</h1>
+            <p>Revolutionizing Financial Reporting at Chanel​</p>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
+            <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section light-background">
+
+      <div class="container" data-aos="zoom-in">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 40
+                },
+                "480": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 60
+                },
+                "640": {
+                  "slidesPerView": 4,
+                  "spaceBetween": 80
+                },
+                "992": {
+                  "slidesPerView": 5,
+                  "spaceBetween": 120
+                },
+                "1200": {
+                  "slidesPerView": 6,
+                  "spaceBetween": 120
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="assets/img/clients/ucl.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/chanel.png" class="img-fluid" alt=""></div>
+          </div>
+
+        </div>
+
+    </section><!-- /Clients Section -->
+
+    <section id="implementation-frontend" class="section light-background">
+      <div class="container">
+        <h1>Frontend Implementation</h1>
+        <h2>Explanation of Key Frontend Features</h2>
+        <br><br>
+
+        <!-- Authentication Feature -->
+        <h3>Authentication with Microsoft Entra ID</h3>
+
+        <!-- Subsection 1: Creating the Entra ID Service -->
+        <h3>1. Creating the Microsoft Entra ID Service</h3>
+        <p>
+          Due to the business-sensitive nature of the handled data, we needed to ensure that only authorized team
+          members
+          could access the application. To meet this requirement, we implemented authentication using Microsoft Entra ID
+          (formerly Azure Active Directory). This service allows us to manage user access securely and provides
+          flexibility
+          for Chanel's technical support and administrators to validate and tweak the implementation as needed.
+        </p>
+        <p>
+          We designed a role-based authentication system with a whitelist of emails, enabling Chanel to add or remove
+          users
+          on an ad-hoc basis. The process involved:
+        </p>
+        <ul>
+          <li>Creating a new Microsoft Entra ID service in the Azure portal.</li>
+          <li>Defining a list of allowed emails (e.g., development team and Chanel contacts).</li>
+          <li>Configuring API permissions to allow access to user profile data.</li>
+          <li>Generating client secrets and tenant IDs for integration with the frontend.</li>
+        </ul>
+
+        <!-- Subsection 2: Frontend Authentication with NextAuth -->
+        <h3>2. Frontend Authentication with NextAuth</h3>
+        <p>
+          To integrate Microsoft Entra ID with the frontend, we used <strong>NextAuth.js</strong>, a popular
+          authentication
+          library for Next.js. NextAuth.js simplifies the OAuth 2.0 flow and provides built-in support for Azure Active
+          Directory (Microsoft Entra ID). Below are the key steps we followed:
+        </p>
+
+        <!-- Step 1: Environment Variables -->
+        <h4>Step 1: Setting Up Environment Variables</h4>
+        <p>
+          We copied the client ID, client secret, and tenant ID from the Microsoft Entra ID service into a `.env` file
+          to
+          securely store sensitive credentials. These variables are used to configure NextAuth.js.
+        </p>
+        <pre>
+    <strong>
+    <code>
+    AZURE_AD_CLIENT_ID=your-client-id
+    AZURE_AD_CLIENT_SECRET=your-client-secret
+    AZURE_AD_TENANT_ID=your-tenant-id
+    NEXTAUTH_URL=http://localhost:3000
+    </code>
+    </strong>
+        </pre>
+
+        <!-- Step 2: Configuring NextAuth -->
+        <h4>Step 2: Configuring NextAuth.js</h4>
+        <p>
+          We created an API route at <code>/pages/api/auth/[...nextauth].js</code> to handle authentication. This route
+          defines the Azure AD provider and includes a whitelist of allowed emails to restrict access. Below is the
+          configuration:
+        </p>
+        <pre>
+    <strong>
+    <code>
+    import NextAuth from "next-auth";
+    import AzureADProvider from "next-auth/providers/azure-ad";
+    
+    export default NextAuth({
+      providers: [
+        AzureADProvider({
+          clientId: process.env.AZURE_AD_CLIENT_ID,
+          clientSecret: process.env.AZURE_AD_CLIENT_SECRET,
+          tenantId: process.env.AZURE_AD_TENANT_ID,
+        }),
+      ],
+      callbacks: {
+        async signIn({ user }) {
+          const allowedEmails = ["allowed.email1@example.com", "allowed.email2@example.com"];
+          if (allowedEmails.includes(user.email)) {
+            return true; // Allow sign-in
+          } else {
+            return false; // Deny sign-in
+          }
+        },
+      },
+    });
+    </code>
+    </strong>
+        </pre>
+
+        <!-- Step 3: Session Provider -->
+        <h4>Step 3: Wrapping the App with Session Provider</h4>
+        <p>
+          To make the authentication session available throughout the application, we wrapped the app in a
+          <code>SessionProvider</code>. This ensures that authenticated users can access protected routes and their
+          session
+          data is accessible globally.
+        </p>
+        <pre>
+    <strong>
+    <code>
+    import { SessionProvider } from "next-auth/react";
+    
+    export default function App({ Component, pageProps: { session, ...pageProps } }) {
+      return (
+        &lt;SessionProvider session={session}>
+          &lt;Component {...pageProps} />
+        &lt;SessionProvider/>
+      );
+    }
+    </code>
+    </strong>
+        </pre>
+
+        <!-- Step 4: Protecting Routes -->
+        <h4>Step 4: Protecting Routes</h4>
+        <p>
+          We implemented protected routes to ensure that only authenticated users can access sensitive pages like the
+          Dashboard and Upload pages. This was achieved using the <code>getServerSession</code> function provided by
+          NextAuth.js. Below is an example of how we protected a route:
+        </p>
+        <pre>
+    <strong>
+    <code>
+    import { getServerSession } from "next-auth/next";
+    import { authOptions } from "./auth/[...nextauth]";
+    
+    export default async (req, res) => {
+      const session = await getServerSession(req, res, authOptions);
+    
+      if (session) {
+        res.send({ content: "This is protected content. You can access this content because you are signed in." });
+      } else {
+        res.send({
+          error: "You must be signed in to view the protected content on this page.",
+        });
+      }
+    };
+    </code>
+    </strong>
+        </pre>
+
+        <!-- Step 5: Sign-In and Sign-Up Pages -->
+        <h4>Step 5: Creating Sign-In and Sign-Up Pages</h4>
+        <p>
+          We created dedicated sign-in and sign-up pages using NextAuth.js hooks. These pages allow users to
+          authenticate
+          themselves and access the application if their email is included in the whitelist. Below is an example of the
+          sign-in button:
+        </p>
+        <pre>
+        <strong>
+        <code>
+        import { signIn } from "next-auth/react";
+        
+        export default function SignInButton() {
+          return &lt;button onClick={() =&gt; signIn()}&gt;Sign In with Microsoft&lt;/button&gt;;
+        }
+        </code>
+        </strong>
+      </pre>
+
+      </div>
+    </section>
+    <section id="graphing-capabilities" class="section light-background">
+      <div class="container">
+        <h3>Graphing Capabilities: Processing Summary Excel File</h3>
+        <p>
+          The <strong>Budget vs Actual Chart</strong> relies on data extracted from a summary Excel file stored in Azure
+          Blob Storage.
+          This file is processed on the client-side using the Microsoft Blob SDK and parsed into structured data for
+          visualization.
+          Below is a detailed explanation of how the Excel file is processed into a usable format for the frontend
+          chart.
+        </p>
+
+        <!-- Step 1: Raw Data Extraction -->
+        <h4>Step 1: Raw Data Extraction</h4>
+        <p>
+          The Excel file is downloaded from Azure Blob Storage and read as a raw 2D array of strings, where each row
+          represents
+          a line in the spreadsheet and each column represents a cell. This raw data is passed to the
+          <code>parseExcelData</code>
+          function for processing.
+        </p>
+        <pre>
+    <strong>
+    <code>
+    const dataRows = rawData.slice(2); // Skip header rows
+    if (!rawData || rawData.length < 3) return []; // Handle empty or invalid data
+    </code>
+    </strong>
+        </pre>
+
+        <!-- Step 2: Campaign Data Extraction -->
+        <h4>Step 2: Campaign Data Extraction</h4>
+        <p>
+          Each row in the spreadsheet is processed to extract <strong>campaign-level financial metrics</strong>.
+          The function distinguishes between three types of rows:
+        </p>
+        <ul>
+          <li><strong>Main Campaign Rows:</strong> Rows with a PO number.</li>
+          <li><strong>Sub-Campaign Rows:</strong> Rows with a name but no PO number.</li>
+          <li><strong>Channel Rows:</strong> Rows with channel-specific financial data.</li>
+        </ul>
+
+        <!-- Main Campaign Rows -->
+        <h5>Main Campaign Rows</h5>
+        <p>
+          If a row contains a PO number, it is treated as a main campaign. Financial metrics are extracted, and the
+          campaign
+          is added to the list.
+        </p>
+        <pre>
+    <strong>
+    <code>
+    if (row[0]) {
+      campaigns.push({
+        poNumber: String(row[0] || ""),
+        name: String(row[1] || ""),
+        channels: [{
+          name: String(row[2] || ""),
+          financials: { ...financials },
+        }],
+        financials: { ...financials },
+        market: String(row[12] || ""),
+      });
+    }
+    </code>
+    </strong>
+        </pre>
+
+        <!-- Sub-Campaign Rows -->
+        <h5>Sub-Campaign Rows</h5>
+        <p>
+          If a row has a name but no PO number, it is treated as a sub-campaign. The function identifies the parent
+          campaign
+          by searching previous rows for a main campaign. The sub-campaign is then added to the list.
+        </p>
+        <pre>
+    <strong>
+    <code>
+    else if (row[1] && row[2]) {
+      let parentName = "";
+      for (let j = i - 1; j >= 0; j--) {
+        if (dataRows[j] && dataRows[j][0] && dataRows[j][1]) {
+          parentName = String(dataRows[j][1] || "");
+          break;
+        }
+      }
+    
+      campaigns.push({
+        poNumber: "",
+        name: String(row[1] || ""),
+        channels: [{
+          name: String(row[2] || ""),
+          financials: { ...financials },
+        }],
+        financials: { ...financials },
+        market: String(row[12] || ""),
+        isSubCampaign: true,
+        parentCampaignName: parentName,
+      });
+    }
+    </code>
+    </strong>
+        </pre>
+
+        <!-- Channel Rows -->
+        <h5>Channel Rows</h5>
+        <p>
+          If a row contains channel-specific data but no campaign name or PO number, it is treated as a channel row.
+          The financial metrics are added to the most recent campaign, and the campaign totals are updated.
+        </p>
+        <pre>
+    <strong>
+    <code>
+    else if (row[2] && campaigns.length > 0) {
+      const lastCampaign = campaigns[campaigns.length - 1];
+      lastCampaign.channels.push({
+        name: String(row[2] || ""),
+        financials: { ...financials },
+      });
+    
+      // Update campaign totals
+      lastCampaign.financials.netBillable += financials.netBillable;
+      lastCampaign.financials.agencyCommission += financials.agencyCommission;
+      lastCampaign.financials.invoiceVal += financials.invoiceVal;
+    }
+    </code>
+    </strong>
+        </pre>
+
+        <!-- Step 3: Financial Metrics Extraction -->
+        <h4>Step 3: Financial Metrics Extraction</h4>
+        <p>
+          For each row, financial metrics are extracted and converted into numbers. If a cell is empty, the value
+          defaults
+          to <code>0</code>.
+        </p>
+        <pre>
+    <strong>
+    <code>
+    const financials: FinancialMetrics = {
+      netBillable: Number(row[4]) || 0,
+      agencyCommission: Number(row[5]) || 0,
+      levyASBOF: Number(row[6]) || 0,
+      invoiceVal: Number(row[7]) || 0,
+      plannedSpend: Number(row[8]) || 0,
+      reservedBudget: Number(row[9]) || 0,
+      totalBudget: Number(row[10]) || 0,
+      chanelBudget: Number(row[11]) || 0,
+    };
+    </code>
+    </strong>
+        </pre>
+
+        <!-- Step 4: Returning Structured Data -->
+        <h4>Step 4: Returning Structured Data</h4>
+        <p>
+          After processing all rows, the function returns a structured list of campaigns, each containing:
+        </p>
+        <ul>
+          <li><strong>PO Number:</strong> Unique identifier for the campaign.</li>
+          <li><strong>Name:</strong> Campaign name.</li>
+          <li><strong>Channels:</strong> List of channels with financial data.</li>
+          <li><strong>Financial Metrics:</strong> Aggregated financial data for the campaign.</li>
+          <li><strong>Market:</strong> Market associated with the campaign.</li>
+          <li><strong>Parent Campaign Name:</strong> For sub-campaigns.</li>
+        </ul>
+        Using this structured data we generate Graphs using Recharts.
+        <br>
+        <br>
+        <img src="viz.png" alt="An example of charts generated on the dashboard" class="rounded img-fluid animated">
+      </div>
+    </section>
+
+
+
+
+    <footer id="footer" class="footer">
+
+
+
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="d-flex align-items-center">
+              <span class="sitename">FinSync</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Team 17 Website Report</p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+            </ul>
+          </div>
+
+
+
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">FinSync</strong> <span>All Rights Reserved</span></p>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
