@@ -391,6 +391,14 @@ h6 {
   max-width: 400px; /* Adjust this value based on your design needs */
   margin: 0 auto; /* Ensures margin is auto applied both sides for horizontal centering */
 }
+.feature-item {
+  margin-bottom: 0;
+}
+#features .feature-item p {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 /* Mobile Navigation */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
