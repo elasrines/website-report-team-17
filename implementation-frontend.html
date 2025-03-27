@@ -79,10 +79,7 @@
             </ul>
           </li>
 
-          <li class="dropdown"><a href="#"><span>Algorithms</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-            </ul>
-          </li>
+       
 
           <li class="dropdown"><a href="uidesign.html"><span>UI Design</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -202,6 +199,8 @@
             }
           </script>
           <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="assets/img/clients/Microsoft_Azure_Logo.svg.png" class="img-fluid"
+                alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/ucl.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/chanel.png" class="img-fluid" alt=""></div>
           </div>
@@ -214,180 +213,14 @@
       <div class="container">
         <h1>Frontend Implementation</h1>
         <h2>Explanation of Key Frontend Features</h2>
-        <br><br>
-
-        <!-- Authentication Feature -->
-        <h3>Authentication with Microsoft Entra ID</h3>
-
-        <!-- Subsection 1: Creating the Entra ID Service -->
-        <h3>1. Creating the Microsoft Entra ID Service</h3>
-        <p>
-          Due to the business-sensitive nature of the handled data, we needed to ensure that only authorized team
-          members
-          could access the application. To meet this requirement, we implemented authentication using Microsoft Entra ID
-          (formerly Azure Active Directory). This service allows us to manage user access securely and provides
-          flexibility
-          for Chanel's technical support and administrators to validate and tweak the implementation as needed.
-        </p>
-        <p>
-          We designed a role-based authentication system with a whitelist of emails, enabling Chanel to add or remove
-          users
-          on an ad-hoc basis. The process involved:
-        </p>
-        <ul>
-          <li>Creating a new Microsoft Entra ID service in the Azure portal.</li>
-          <li>Defining a list of allowed emails (e.g., development team and Chanel contacts).</li>
-          <li>Configuring API permissions to allow access to user profile data.</li>
-          <li>Generating client secrets and tenant IDs for integration with the frontend.</li>
-        </ul>
-
-        <!-- Subsection 2: Frontend Authentication with NextAuth -->
-        <h3>2. Frontend Authentication with NextAuth</h3>
-        <p>
-          To integrate Microsoft Entra ID with the frontend, we used <strong>NextAuth.js</strong>, a popular
-          authentication
-          library for Next.js. NextAuth.js simplifies the OAuth 2.0 flow and provides built-in support for Azure Active
-          Directory (Microsoft Entra ID). Below are the key steps we followed:
-        </p>
-
-        <!-- Step 1: Environment Variables -->
-        <h4>Step 1: Setting Up Environment Variables</h4>
-        <p>
-          We copied the client ID, client secret, and tenant ID from the Microsoft Entra ID service into a `.env` file
-          to
-          securely store sensitive credentials. These variables are used to configure NextAuth.js.
-        </p>
-        <pre>
-    <strong>
-    <code>
-    AZURE_AD_CLIENT_ID=your-client-id
-    AZURE_AD_CLIENT_SECRET=your-client-secret
-    AZURE_AD_TENANT_ID=your-tenant-id
-    NEXTAUTH_URL=http://localhost:3000
-    </code>
-    </strong>
-        </pre>
-
-        <!-- Step 2: Configuring NextAuth -->
-        <h4>Step 2: Configuring NextAuth.js</h4>
-        <p>
-          We created an API route at <code>/pages/api/auth/[...nextauth].js</code> to handle authentication. This route
-          defines the Azure AD provider and includes a whitelist of allowed emails to restrict access. Below is the
-          configuration:
-        </p>
-        <pre>
-    <strong>
-    <code>
-    import NextAuth from "next-auth";
-    import AzureADProvider from "next-auth/providers/azure-ad";
-    
-    export default NextAuth({
-      providers: [
-        AzureADProvider({
-          clientId: process.env.AZURE_AD_CLIENT_ID,
-          clientSecret: process.env.AZURE_AD_CLIENT_SECRET,
-          tenantId: process.env.AZURE_AD_TENANT_ID,
-        }),
-      ],
-      callbacks: {
-        async signIn({ user }) {
-          const allowedEmails = ["allowed.email1@example.com", "allowed.email2@example.com"];
-          if (allowedEmails.includes(user.email)) {
-            return true; // Allow sign-in
-          } else {
-            return false; // Deny sign-in
-          }
-        },
-      },
-    });
-    </code>
-    </strong>
-        </pre>
-
-        <!-- Step 3: Session Provider -->
-        <h4>Step 3: Wrapping the App with Session Provider</h4>
-        <p>
-          To make the authentication session available throughout the application, we wrapped the app in a
-          <code>SessionProvider</code>. This ensures that authenticated users can access protected routes and their
-          session
-          data is accessible globally.
-        </p>
-        <pre>
-    <strong>
-    <code>
-    import { SessionProvider } from "next-auth/react";
-    
-    export default function App({ Component, pageProps: { session, ...pageProps } }) {
-      return (
-        &lt;SessionProvider session={session}>
-          &lt;Component {...pageProps} />
-        &lt;SessionProvider/>
-      );
-    }
-    </code>
-    </strong>
-        </pre>
-
-        <!-- Step 4: Protecting Routes -->
-        <h4>Step 4: Protecting Routes</h4>
-        <p>
-          We implemented protected routes to ensure that only authenticated users can access sensitive pages like the
-          Dashboard and Upload pages. This was achieved using the <code>getServerSession</code> function provided by
-          NextAuth.js. Below is an example of how we protected a route:
-        </p>
-        <pre>
-    <strong>
-    <code>
-    import { getServerSession } from "next-auth/next";
-    import { authOptions } from "./auth/[...nextauth]";
-    
-    export default async (req, res) => {
-      const session = await getServerSession(req, res, authOptions);
-    
-      if (session) {
-        res.send({ content: "This is protected content. You can access this content because you are signed in." });
-      } else {
-        res.send({
-          error: "You must be signed in to view the protected content on this page.",
-        });
-      }
-    };
-    </code>
-    </strong>
-        </pre>
-
-        <!-- Step 5: Sign-In and Sign-Up Pages -->
-        <h4>Step 5: Creating Sign-In and Sign-Up Pages</h4>
-        <p>
-          We created dedicated sign-in and sign-up pages using NextAuth.js hooks. These pages allow users to
-          authenticate
-          themselves and access the application if their email is included in the whitelist. Below is an example of the
-          sign-in button:
-        </p>
-        <pre>
-        <strong>
-        <code>
-        import { signIn } from "next-auth/react";
-        
-        export default function SignInButton() {
-          return &lt;button onClick={() =&gt; signIn()}&gt;Sign In with Microsoft&lt;/button&gt;;
-        }
-        </code>
-        </strong>
-      </pre>
-
-      </div>
-    </section>
-    <section id="graphing-capabilities" class="section light-background">
-      <div class="container">
         <h3>Graphing Capabilities: Processing Summary Excel File</h3>
         <p>
-          The <strong>Budget vs Actual Chart</strong> relies on data extracted from a summary Excel file stored in Azure
+          The <strong>Divison Tables</strong> rely on data extracted from a summary Excel file stored in Azure
           Blob Storage.
           This file is processed on the client-side using the Microsoft Blob SDK and parsed into structured data for
           visualization.
           Below is a detailed explanation of how the Excel file is processed into a usable format for the frontend
-          chart.
+          tables
         </p>
 
         <!-- Step 1: Raw Data Extraction -->
@@ -544,10 +377,11 @@
           <li><strong>Market:</strong> Market associated with the campaign.</li>
           <li><strong>Parent Campaign Name:</strong> For sub-campaigns.</li>
         </ul>
-        Using this structured data we generate Graphs using Recharts.
+        Using this structured data we map through the campaigns and channels to create tables for each division.
         <br>
         <br>
-        <img src="viz.png" alt="An example of charts generated on the dashboard" class="rounded img-fluid animated">
+        <img src="assets/img/tables.jpeg" alt="An example of tables created from the processed data"
+          class="rounded img-fluid animated">
       </div>
     </section>
 
