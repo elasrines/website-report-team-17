@@ -748,11 +748,6 @@ h6 {
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
-  [data-aos-delay] {
-    transition-delay: 0 !important;
-  }
-}
 
 /*--------------------------------------------------------------
 # Global Page Titles & Breadcrumbs
@@ -877,6 +872,7 @@ section,
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
+  color: white
 }
 
 .hero p {
@@ -960,6 +956,76 @@ section,
     transform: translateY(-10px);
   }
 }
+.sketch-title {
+  font-size: 20px; /* Size of the titles for each section */
+  color: #37517e; /* Color of the titles, which can be adjusted to match your branding */
+  margin-top: 20px; /* Space above each title */
+  margin-bottom: 10px; /* Space below each title */
+}
+
+.pic {
+  display: inline-block; /* Changes display to inline-block to allow side by side layout */
+  width: 49%; /* Adjust width to allow two images side by side */
+  padding: 2px; /* Minimal padding */
+  text-align: center; /* Centers images within their blocks */
+}
+
+.pic img {
+  width: 100%; /* Ensures images take full width of the .pic div */
+  max-width: 500px; /* Limits the size to make them smaller */
+  height: auto; /* Maintains aspect ratio */
+  margin-bottom: 10px; /* Space between images if stacked */
+}
+
+.section.light-background {
+  background-color: #f5f6f8; /* Light background color for better contrast */
+  padding: 40px 0; /* More padding for better spacing around the section */
+}
+
+/* Specific styles for the wireframes section */
+#wireframes {
+  background-color: #f8f9fa; /* Example background color */
+  padding: 20px; /* Adds padding inside the section */
+  border: 1px solid #ccc; /* Adds a border around the section */
+}
+
+#wireframes .container {
+  max-width: 1200px; /* Sets maximum width of the container */
+  margin: 0 auto; /* Centers the container */
+}
+
+#wireframes h2.section-title {
+  text-align: center; /* Centers the title */
+  color: #333; /* Sets the color of the title */
+}
+
+#wireframes .sketch-title {
+  color: #555; /* Darker text for sub-titles */
+  font-size: 18px; /* Sets font size for sketch titles */
+}
+
+#wireframes .pic {
+  width: 100%; /* Adjust this value to make the image container larger */
+  padding: 10px; /* Provides some space around the images */
+  text-align: center; /* Keeps images centered within the container */
+}
+
+#wireframes .pic img {
+  width: auto; /* Keeps width proportional to the height */
+  max-width: 100%; /* Ensures image doesn't overflow its container */
+  height: auto; /* Maintains the aspect ratio */
+  max-height: 500px; /* Increases the height to make images bigger */
+  margin-bottom: 20px; /* Adds more space below the images */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Enhances the shadow for better visual separation */
+}
+
+/* Targeting the Invoice Matching image specifically */
+#wireframes .row:nth-child(3) .pic img {
+  max-width: 1200px; /* Increase the maximum height */
+  width: auto; /* Adjust the width automatically to maintain aspect ratio */
+}
+
+/* Additional styling as needed */
 
 /*--------------------------------------------------------------
 # Clients Section
@@ -1364,12 +1430,6 @@ section,
   margin-right: 0;
 }
 
-@media (max-width: 575px) {
-  .portfolio .portfolio-filters li {
-    font-size: 14px;
-    margin: 0 0 10px 0;
-  }
-}
 
 .portfolio .portfolio-item {
   position: relative;
