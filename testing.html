@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Testing</title>
+    <meta name="description" content="Overview of testing strategies for the FinSync project">
+    <meta name="keywords" content="FinSync, Testing, Quality Assurance">
+
+    <!-- Favicons -->
+    <link href="assets/img/flogoo.png" rel="icon">
+    <link href="assets/img/flogoo" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@400;500;600;700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+    <!-- Header -->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="assets/img/flogoo.png" alt="FinSync Logo">
+            </a>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="requirements.html">Requirements</a></li>
+                    <li class="active"><a href="testing.html">Testing</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section id="hero" class="hero section dark-background">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="zoom-out">
+                        <h1>Testing Strategies</h1>
+                        <p>Exploring the methodologies behind our project's quality assurance.</p>
+                    </div>
+                    <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                        <img src="assets/img/testing-hero.png" class="img-fluid animated" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testing Strategy Section -->
+<section id="testingstrategy" class="section light-background">
+    <div class="container">
+        <h2 class="section-title">Testing Strategy</h2>
+        <p>For the FinSync project, our testing approach is meticulously designed to ensure thorough coverage and robustness of the application. We have achieved a code coverage of over <strong>95%</strong>, reflecting our commitment to quality and our confidence in the product delivered to our clients.
+
+        </p>
+        
+        <div class="row">
+            <!-- Fully-automated Testing -->
+            <div class="col-md-6">
+                <p><strong>Fully-automated:</strong></p>
+                <ul>
+                    <li><strong>Unit testing:</strong> We meticulously test each component to ensure individual functionalities operate as intended.</li>
+                    <li><strong>Integration testing:</strong>  This ensures that various components of the application work together seamlessly, validating the entire workflow from end to end.</li>
+                    <li><strong>Performance testing:</strong> We assess the application's performance to ensure it meets the required speed and efficiency under varying loads.</li>
+                </ul>
+            </div>
+
+            <!-- Semi-automated Testing -->
+            <div class="col-md-6">
+                <p><strong>Semi-automated:</strong></p>
+                <ul>
+                    <li><strong>User Acceptance testing:</strong>  Conducted with selected end-users to ensure the application meets the real-world scenarios and fulfills user requirements.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+        <!-- Unit Testing Section -->
+<section id="unit" class="section">
+    <div class="container">
+      <h2 class="section-title">Unit Testing</h2>
+      <p>Unit testing was a foundational aspect of our quality assurance process. We tested each module in isolation to ensure that all individual functions and components behave as expected.</p>
+  
+      <h4>Backend Testing (Python)</h4>
+      <p>We used <code>pytest</code> to write and run unit tests for all backend Azure Functions. Each core file, including the Excel processing pipeline, Blob triggers, and ingestion logic, was individually tested. The final test coverage for the backend reached <strong>95%</strong>, with multiple files achieving full 100% coverage.</p>
+      
+      <p>📸 <em>Backend coverage screenshot:</em></p>
+      <div style="text-align: center;">
+        <img src="assets/img/testing/backend.png" alt="Backend Test Coverage Report"
+             class="img-fluid mb-4"
+             style="max-width: 70%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
+      </div>
+      
+  
+      <h4>Frontend Testing (TypeScript)</h4>
+      <p>On the frontend, we used <code>Jest</code> to create unit tests for our key logic and components. Tests were written for our Excel parser and upload logic, and we ensured that all functions behaved correctly even with edge cases.</p>
+      
+      <p>The frontend code achieved <strong>92.52% statement coverage</strong> and <strong>100% function coverage</strong>, with only a few uncovered branches due to conditional rendering that was less critical for unit testing.</p>
+  
+      <p>📸 <em>Frontend coverage screenshot:</em></p>
+      <div style="text-align: center;">
+        <img src="assets/img/testing/frontend.png" alt="Frontend Test Coverage Report"
+             class="img-fluid mb-4"
+             style="max-width: 90%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
+      </div>    </div>
+  </section>
+  
+
+<!-- Integration Testing Section -->
+<section id="integration" class="section light-background">
+    <div class="container">
+      <h2 class="section-title">Integration Testing</h2>
+      <p>
+        To validate the end-to-end functionality of our data processing pipeline, we developed a Python-based integration test script instead of relying on manual uploads. This script simulates a complete run of the system—starting from a document upload, through all intermediate steps, and finally verifying the generated outputs.
+      </p>
+  
+      <h5>1. Programmatic Upload to Blob Storage</h5>
+      <p>
+        The script uploads <strong>Chanel UK Billed.xlsx</strong> directly to the <code>subcontractor-documents</code> container using the Azure SDK. This initiates the automated pipeline.
+      </p>
+      <img src="assets/img/testing/uploaded-excel.png" class="img-fluid mb-3" alt="Uploaded Excel File">
+  
+      <h5>2. Automatic Conversion to CSV</h5>
+      <p>
+        The Azure Function reads the uploaded Excel file and converts it into CSV format, which is stored in the <code>csv-conversion</code> container.
+      </p>
+      <img src="assets/img/testing/adx-logs-1.png" class="img-fluid mb-3" alt="Function Execution Log"> 
+      <img src="assets/img/testing/adx-logs-2.png" class="img-fluid mb-3" alt="Function Execution Log"> 
+      <img src="assets/img/testing/adx-logs-3.png" class="img-fluid mb-3" alt="Function Execution Log"> 
+      <img src="assets/img/testing/generated-csv.png" class="img-fluid mb-3" alt="Generated CSV"> 
+      
+      <h5>3. CSV Triggers Ingestion Function</h5>
+      <p>
+        Once the CSV is uploaded, a second Azure Function is triggered. It:
+      </p>
+      <ul>
+        <li>Parses the CSV with <code>pandas</code></li>
+        <li>Ingests the data into Azure Data Explorer (ADX)</li>
+        <li>Generates a formatted Excel report using <code>openpyxl</code></li>
+        <li>Uploads the report to the <code>summary</code> container</li>
+      </ul>
+      
+      <img src="assets/img/testing/adx-logs-4.png" class="img-fluid mb-3" alt="Function Execution Log"> 
+      <img src="assets/img/testing/adx-logs-5.png" class="img-fluid mb-3" alt="Function Execution Log"> 
+      <img src="assets/img/testing/adx-logs-6.png" class="img-fluid mb-3" alt="Function Execution Log"> 
+      <img src="assets/img/testing/adx-logs-7.png" class="img-fluid mb-3" alt="Function Execution Log"> 
+
+  
+      <h5>4. Excel Output Verification</h5>
+      <p>
+        The test script downloads <code>FormattedAnnualBudget.xlsx</code> and validates:
+      </p>
+      <ul>
+        <li>✅ Presence of sheets: F&B Monthly, FSH&EW Monthly, W&FJ Monthly</li>
+        <li>✅ Data population and formatting</li>
+        <li>✅ Totals and visual styling correctness</li>
+      </ul>
+      <img src="assets/img/testing/final-excel-1.png" class="img-fluid mb-3" alt="Formatted Excel"> 
+      <img src="assets/img/testing/final-excel-2.png" class="img-fluid mb-3" alt="Formatted Excel"> 
+
+  
+      <h5>🛠️ Logging & Monitoring</h5>
+      <p>
+        Azure Application Insights and Function logs were used to:
+      </p>
+      <ul>
+        <li>Trace the full execution pipeline</li>
+        <li>Confirm authentication and token acquisition</li>
+        <li>Detect issues like ingestion failures or corrupted uploads</li>
+      </ul>
+      <img src="assets/img/testing/logs1.png" class="img-fluid mb-3" alt="Application Insights Log"> 
+      <img src="assets/img/testing/logs2.png" class="img-fluid mb-3" alt="Application Insights Log"> 
+
+  
+      <h5>🧪 Error Scenarios Tested</h5>
+      <p>We tested the following failure conditions:</p>
+      <ul>
+        <li>❌ <strong>Duplicate uploads:</strong> Re-uploads using <code>overwrite=True</code> were handled gracefully</li>
+        <li>❌ <strong>Missing intermediate files:</strong> The script uses <code>wait_for_file()</code> to detect timeouts and raise errors</li>
+        <li>❌ <strong>ADX token failures:</strong> Manually revoked tokens led to proper logging and halted ingestion</li>
+        <li>❌ <strong>Invalid Excel formatting:</strong> Our <code>validate_excel()</code> method checks for expected sheet names and formatting</li>
+      </ul>
+  
+      <h5>✅ Results</h5>
+      <p>
+        All stages of the pipeline were successfully validated:
+      </p>
+      <ul>
+        <li>✅ Input files were correctly transformed</li>
+        <li>✅ CSV and Excel files reached their correct destinations</li>
+        <li>✅ Excel reports were accurately generated and styled</li>
+        <li>✅ All errors were logged and handled without data loss</li>
+      </ul>
+      <p>
+        This Python-based testing approach ensures repeatability, automation, and confidence in future updates.
+      </p>
+    </div>
+  </section>
+  
+
+
+       <!-- Performance Testing Section -->
+<section id="performance" class="section">
+    <div class="container">
+      <h2 class="section-title">Performance Testing</h2>
+      <p>
+        For performance testing, we focused on evaluating the execution speed of our Azure Functions responsible for processing and ingesting Excel files. Specifically, we benchmarked:
+      </p>
+      <ul>
+        <li>🔁 <strong>Excel to CSV conversion</strong></li>
+        <li>📊 <strong>CSV ingestion into Azure Data Explorer (ADX)</strong></li>
+      </ul>
+      <p>
+        We utilized <code>pytest</code>’s <code>benchmark</code> fixture to measure function performance across different file sizes. The chosen sizes—100 KB, 115 KB, and 125 KB—were selected to represent a realistic range based on our actual sample files (86 KB and 106 KB).
+      </p>
+  
+      <h5>📈 Benchmark Results</h5>
+      <p>The raw performance benchmarks captured from pytest are shown below:</p>
+      <img src="assets/img/testing/benchmark-table.png" class="img-fluid mb-4 mx-auto d-block" alt="Pytest Benchmark Results" style="max-width: 80%; height: auto;">
+  
+      <p>To visualize the performance trends more intuitively, we also generated charts showing the time taken for each function across varying file sizes.</p>
+  
+      <h5>🧾 Process Billed File – Performance Chart</h5>
+      <img src="assets/img/testing/billed-performance-chart.png" class="img-fluid mb-4 mx-auto d-block" alt="Billed File Benchmark Chart" style="max-width: 60%; height: auto;">
+      <p>
+        The <strong>billed processing function</strong> had the slowest performance, likely due to the number of sheets processed and the significant data cleaning involved. While larger files show a slight increase in processing speed, the performance variation remains minimal.
+      </p>
+  
+      <h5>📘 Process Budget Tracker – Performance Chart</h5>
+      <img src="assets/img/testing/budget-tracker-performance-chart.png" class="img-fluid mb-4 mx-auto d-block" alt="Budget Tracker Benchmark Chart" style="max-width: 60%; height: auto;">
+      <p>
+        The <strong>budget tracker function</strong> performed faster overall, with negligible performance differences between the various file sizes.
+      </p>
+  
+      <h5>🧪 Ingest to ADX – Performance Chart</h5>
+      <img src="assets/img/testing/adx-ingest-performance-chart.png" class="img-fluid mb-4 mx-auto d-block" alt="ADX Ingest Benchmark Chart" style="max-width: 60%; height: auto;">
+      <p>
+        The <strong>blob ingestion to ADX function</strong> was the most performant. Interestingly, the 115 KB file took slightly longer to ingest compared to larger files, suggesting possible optimization or network variation influencing the results.
+      </p>
+  
+      <p>
+        These performance tests ensure our pipeline remains efficient under real-world workloads and help us detect potential bottlenecks for larger deployments.
+      </p>
+    </div>
+  </section>
+  
+       <!-- User Acceptance Testing Section -->
+<section id="user-acceptance" class="section light-background">
+    <div class="container">
+      <h2 class="section-title">User Acceptance Testing</h2>
+      <p>Validation of the application's functionality and usability in real-world scenarios by our target user base.</p>
+  
+      <!-- Simulated Testers -->
+      <h4>🧑‍💻 Simulated Testers</h4>
+      <p>
+        To replicate real-world usage and gather early usability insights, we conducted simulated testing sessions with students acting as stand-ins for the actual Chanel Media users. These testers represented varying levels of technical proficiency.
+      </p>
+      <ul>
+        <li>📊 <strong>Media Executive</strong>: Uploads budget and billed reports, uses dashboard for reconciliation.</li>
+        <li>💼 <strong>Finance Analyst</strong>: Verifies monthly expenditures and investigates data anomalies.</li>
+        <li>🧪 <strong>New User</strong>: Explores the platform without training to assess onboarding clarity.</li>
+      </ul>
+      <p>Testers were observed while completing tasks and their feedback helped improve user experience and functionality.</p>
+  
+      <!-- Test Cases -->
+      <h4>🧪 Test Cases</h4>
+      <p>We defined a series of acceptance test cases aligned with the core FinSync workflows:</p>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Test Case</th>
+              <th>Objective</th>
+              <th>Steps</th>
+              <th>Expected Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Upload Billed Excel</td>
+              <td>Verify upload & conversion pipeline</td>
+              <td>Upload sample billed file to platform</td>
+              <td>File is converted to CSV and processed</td>
+            </tr>
+            <tr>
+              <td>View Dashboard</td>
+              <td>Ensure correct data visualization</td>
+              <td>Navigate to dashboard post-ingestion</td>
+              <td>Graphs display accurate, updated data</td>
+            </tr>
+            <tr>
+              <td>Download Final Excel</td>
+              <td>Confirm Excel output generation</td>
+              <td>Download Excel report from summary container</td>
+              <td>Report contains formatted sheets with totals</td>
+            </tr>
+            <tr>
+              <td>Responsive UI</td>
+              <td>Test mobile & tablet compatibility</td>
+              <td>Open app on different devices</td>
+              <td>Layout adapts properly to screen size</td>
+            </tr>
+            <tr>
+              <td>Error Handling</td>
+              <td>Validate system response to bad input</td>
+              <td>Upload a corrupted file</td>
+              <td>App rejects file and shows error message</td>
+            </tr>
+            <tr>
+              <td>Navigation & Usability</td>
+              <td>Test onboarding and intuitive UI</td>
+              <td>Use app with no prior instructions</td>
+              <td>User completes tasks and rates experience</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <!-- Feedback from Testers and Partners -->
+      <h4>📬 Feedback from Testers and Project Partners</h4>
+      <p>
+        To collect comprehensive feedback, we shared a <strong>Microsoft Form</strong> with the Chanel Media team and other external testers. This included access to our platform, clear instructions, and example files containing <strong>dummy data</strong> to protect confidentiality.
+      </p>
+      <p>
+        The feedback form—titled <strong>FinSync User Feedback</strong>—was divided into four evaluation areas:
+      </p>
+      <ul>
+        <li><strong>Tool Evaluation</strong> — assessing ease of use, feature effectiveness, and reliability</li>
+        <li><strong>UI Evaluation</strong> — reviewing the intuitiveness, design quality, and responsiveness of the interface</li>
+        <li><strong>Automation & Integration</strong> — evaluating how well the system automates data flow</li>
+        <li><strong>Reporting & Visualization</strong> — analyzing dashboard effectiveness and data filtering capabilities</li>
+      </ul>
+      <p>
+        Testers provided qualitative and quantitative feedback on how well FinSync meets operational needs and expectations. These insights were used to improve functionality and ensure the platform was ready for deployment.
+      </p>
+      <p>
+        The full form can be accessed <a href="https://forms.office.com/e/wFydZj1yHk" target="_blank">here</a>.
+      </p>
+    </div>
+  </section>
+  
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container text-center">
+            <p>&copy; 2025 FinSync. All Rights Reserved. Designed by Team 17.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
