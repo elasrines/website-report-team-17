@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>FinSync - Appendices</title>
+  <meta name="description" content="FinSync Appendices - Documentation for Chanel's financial reporting system">
+  <meta name="keywords" content="FinSync, Chanel, financial reporting, dashboard, expense tracking">
+
+  <!-- Favicons -->
+  <link href="assets/img/flogoo.png" rel="icon">
+  <link href="assets/img/flogoo" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Enhanced Screenshot Styling */
+    .screenshot-container {
+      margin: 2rem 0;
+      text-align: center;
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .screenshot-container img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+    }
+    
+    .caption {
+      font-size: 0.9rem;
+      color: #6c757d;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+    
+    /* Improved Code Block Styling */
+    pre {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 4px;
+      border-left: 4px solid #0d6efd;
+      overflow-x: auto;
+    }
+    
+    /* Section Enhancements */
+    .appendices h3 {
+      border-bottom: 2px solid #0d6efd;
+      padding-bottom: 0.5rem;
+      margin-top: 2rem;
+    }
+    
+    .appendices h4 {
+      color: #495057;
+      margin-top: 1.5rem;
+    }
+    
+    /* Responsive Videos */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+  <!-- Header Section -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/flogoo.png" alt="">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li class="dropdown"><a href="#hero"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#pitchvideo">Pitch Video</a></li>
+              <li><a href="#devteam">Our Dev Team</a></li>
+              <li><a href="#ganttchart">Our Gantt Chart</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="requirements.html"><span>Requirements</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#partnerintroandbg">Partner Introduction and Project background</a></li>
+              <li><a href="#projectgoals">Project Goals</a></li>
+              <li><a href="#reqgathering">Requirement gathering</a></li>
+              <li><a href="#personas">Personas</a></li>
+              <li><a href="#usecases">Use Cases</a></li>
+              <li><a href="#moscow">MoSCoW Requirements List</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Research</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#relatedprojects">Related Projects Review</a></li>
+              <li><a href="#technologyreview">Technology Review</a></li>
+              <li><a href="#summary">A summary of our technical decisions</a></li>
+              <li><a href="#references">References</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="uidesign.html"><span>UI Design</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#uidesignprinciples">UI Design Principles</a></li>
+              <li><a href="#sketches">Sketches</a></li>
+              <li><a href="#wireframes">Wireframes</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#"><span>System Design</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="architecture.html">System architecture diagram</a></li>
+              <li><a href="#datastorage">Data storage</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#"><span>Implementation</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="implementation-frontend.html">Frontend Code</a></li>
+              <li><a href="implementation-backend.html">Backend Code</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#"><span>Testing</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#testingstrategy">Testing Strategy</a></li>
+              <li><a href="#unit-integration">Unit and integration testing</a></li>
+              <li><a href="#user-acceptance">User acceptance testing</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#"><span>Evaluation</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#summary-achievements">Summary of achievements</a></li>
+              <li><a href="#critical-evalutation">Critical evaluation of the project</a></li>
+              <li><a href="#future-work">Future Work</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="appendices.html"><span>Appendices</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#user-manual">User Manual</a></li>
+              <li><a href="#deployment-manual">Deployment manual</a></li>
+              <li><a href="#legal">Legal issues and processes</a></li>
+              <li><a href="#deployment-blog">Development Blog</a></li>
+              <li><a href="#monthly-video">Monthly Video</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+            <h1>FinSync - Appendices</h1>
+            <p class="lead">Comprehensive documentation and resources for Chanel's financial reporting system</p>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
+            <img src="assets/img/hero-img.png" class="img-fluid animated" alt="FinSync Dashboard Overview">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Appendices Section -->
+    <section id="appendices" class="appendices section light-background">
+      <div class="container">
+        <div class="section-title">
+          <h2>Appendices</h2>
+          <p>Complete reference documentation for the FinSync system</p>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-12">
+            
+            <!-- User Manual Section -->
+            <article class="appendix-section">
+              <h3 id="user-manual" class="mb-4">User Manual</h3>
+              
+              <p class="lead">The user manual provides detailed guidance for financial executives using the FinSync application to track campaign spending across Chanel's product divisions.</p>
+              
+              <section class="feature-guide">
+                <h4>Dashboard Overview</h4>
+                <p>The homepage provides financial executives with a comprehensive overview of campaign spending across Chanel's product lines (F&B, FSH&EW, W&FJ).</p>
+                
+                <div class="screenshot-container">
+                  <img src="Homepage.jpg" alt="Chanel Dashboard Homepage showing budget visualization">
+                  <p class="caption">Figure 1: Main dashboard interface with budget overview and campaign spending breakdown</p>
+                </div>
+              </section>
+              
+              <section class="feature-guide mt-5">
+                <h4>Report Generation</h4>
+                <p>To download the report, click the "Download report" button in the bottom right corner of the homepage. This will generate the complete financial report.</p>
+                
+                <div class="screenshot-container">
+                  <img src="Reportpage.jpg" alt="Chanel Dashboard Report page">
+                  <p class="caption">Figure 2: Generated report page showing comprehensive financial data</p>
+                </div>
+              </section>
+              
+              <section class="feature-guide mt-5">
+                <h4>Division-Specific Views</h4>
+                <p>To view reported data for specific divisions, click the corresponding division button (e.g., "F&B", "FSH&EW"). This displays the detailed division report.</p>
+                
+                <div class="screenshot-container">
+                  <img src="FBdivision.jpg" alt="F&B division report page">
+                  <p class="caption">Figure 3: F&B division report showing detailed expenditure breakdown</p>
+                </div>
+              </section>
+              
+              <section class="feature-guide mt-5">
+                <h4>Data Upload</h4>
+                <p>To upload Excel files, click the "Upload" button in the navigation bar. Select "Upload" and choose the document you wish to import into the system.</p>
+                
+                <div class="screenshot-container">
+                  <img src="Uploadpage.jpg" alt="Upload page interface">
+                  <p class="caption">Figure 4: File upload interface for importing financial data</p>
+                </div>
+              </section>
+            </article>
+            
+            <!-- Deployment Manual Section -->
+            <article class="appendix-section mt-5">
+              <h3 id="deployment-manual" class="mb-4">Deployment Manual</h3>
+              
+              <div class="alert alert-info">
+                <strong>System Requirements:</strong> This guide covers deployment of both the Python backend (Azure Functions) and Next.js frontend (Static Web Apps).
+              </div>
+              
+              <section class="deployment-step">
+                <h4>Prerequisites</h4>
+                <ul class="prerequisites-list">
+                  <li><i class="bi bi-check-circle-fill text-primary"></i> Azure account with active subscription</li>
+                  <li><i class="bi bi-check-circle-fill text-primary"></i> <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli" target="_blank">Azure CLI</a> installed</li>
+                  <li><i class="bi bi-check-circle-fill text-primary"></i> <a href="https://nodejs.org/" target="_blank">Node.js</a> (v16+)</li>
+                  <li><i class="bi bi-check-circle-fill text-primary"></i> <a href="https://www.python.org/downloads/" target="_blank">Python</a> (v3.9+)</li>
+                  <li><i class="bi bi-check-circle-fill text-primary"></i> Next.js project (hybrid rendering)</li>
+                </ul>
+              </section>
+              
+              <!-- Azure Functions Deployment -->
+              <section class="deployment-step mt-4">
+                <div class="card">
+                  <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Step 1: Deploy Azure Functions (Python Backend)</h5>
+                  </div>
+                  <div class="card-body">
+                    <h6>1.1 Install Azure Functions Core Tools</h6>
+                    <pre><code class="language-bash">npm install -g azure-functions-core-tools@4</code></pre>
+                    
+                    <h6 class="mt-3">1.2 Initialize a Python Function App</h6>
+                    <pre><code class="language-bash">func init MyFunctionApp --python
+cd MyFunctionApp</code></pre>
+                    
+                    <h6 class="mt-3">1.3 Create an HTTP Trigger Function</h6>
+                    <pre><code class="language-bash">func new --name HttpTrigger --template "HTTP trigger" --authlevel "anonymous"</code></pre>
+                    
+                    <h6 class="mt-3">1.4 Test Locally</h6>
+                    <pre><code class="language-bash">func start</code></pre>
+                    <p>Verify at: <code>http://localhost:7071/api/HttpTrigger</code></p>
+                    
+                    <h6 class="mt-3">1.5 Deploy to Azure</h6>
+                    <pre><code class="language-bash"># Log in to Azure
+az login
+
+# Create a Resource Group
+az group create --name MyResourceGroup --location uksouth
+
+# Create a Storage Account (required for Functions)
+az storage account create --name mystorageaccount --location uksouth --resource-group MyResourceGroup --sku Standard_LRS
+
+# Create a Function App
+az functionapp create --resource-group MyResourceGroup --consumption-plan-location uksouth --runtime python --runtime-version 3.9 --functions-version 4 --name MyFunctionApp --storage-account mystorageaccount --os-type Linux
+
+# Deploy the code
+func azure functionapp publish MyFunctionApp</code></pre>
+                  </div>
+                </div>
+              </section>
+              
+              <!-- Static Web Apps Deployment -->
+              <section class="deployment-step mt-4">
+                <div class="card">
+                  <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Step 2: Deploy Next.js Hybrid App (Static Web Apps)</h5>
+                  </div>
+                  <div class="card-body">
+                    <h6>2.1 Configure next.config.js</h6>
+                    <pre><code class="language-javascript">module.exports = {
+  output: "standalone", // Required for Azure Static Web Apps
+};</code></pre>
+                    
+                    <h6 class="mt-3">2.2 Initialize SWA CLI</h6>
+                    <pre><code class="language-bash">npm install -g @azure/static-web-apps-cli
+swa init</code></pre>
+                    <p>Select <strong>Hybrid Next.js</strong> when prompted.</p>
+                    
+                    <h6 class="mt-3">2.3 Test Locally</h6>
+                    <pre><code class="language-bash">npm run build
+swa start</code></pre>
+                    <p>Verify at: <code>http://localhost:4280</code></p>
+                    
+                    <h6 class="mt-3">2.4 Deploy to Azure Static Web Apps</h6>
+                    <pre><code class="language-bash"># Log in to Azure (if not already done)
+az login
+
+# Create a Static Web App
+az staticwebapp create \
+  --name MyNextJSApp \
+  --resource-group MyResourceGroup \
+  --location uksouth \
+  --source . \
+  --branch main \
+  --app-location "." \
+  --output-location ".next" \
+  --login-with-github # Or use --login-with-azure-ad</code></pre>
+                    
+                    <h6 class="mt-3">2.5 Configure Environment Variables</h6>
+                    <ol>
+                      <li>Go to <strong>Azure Portal</strong> > <strong>Static Web Apps</strong> > <strong>Configuration</strong></li>
+                      <li>Add:
+                        <ul>
+                          <li><code>API_URL</code>: <code>https://MyFunctionApp.azurewebsites.net/api/HttpTrigger</code></li>
+                        </ul>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </section>
+              
+              <!-- Security Configuration -->
+              <section class="deployment-step mt-4">
+                <div class="card">
+                  <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Step 3: Secure the Deployment</h5>
+                  </div>
+                  <div class="card-body">
+                    <h6>3.1 Enable HTTPS</h6>
+                    <pre><code class="language-bash">az functionapp update --resource-group MyResourceGroup --name MyFunctionApp --https-only true
+az staticwebapp update --resource-group MyResourceGroup --name MyNextJSApp --https-only true</code></pre>
+                    
+                    <h6 class="mt-3">3.2 Set Up CORS</h6>
+                    <pre><code class="language-bash">az functionapp cors add --resource-group MyResourceGroup --name MyFunctionApp --allowed-origins https://MyNextJSApp.azurestaticapps.net</code></pre>
+                  </div>
+                </div>
+              </section>
+              
+              <!-- Verification -->
+              <section class="deployment-step mt-4">
+                <div class="card border-success">
+                  <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">Step 4: Verify Deployment</h5>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <strong>Frontend</strong>: Access at <a href="https://MyNextJSApp.azurestaticapps.net" target="_blank">https://MyNextJSApp.azurestaticapps.net</a>
+                      </li>
+                      <li class="list-group-item">
+                        <strong>Backend</strong>: Test API at <a href="https://MyFunctionApp.azurewebsites.net/api/HttpTrigger" target="_blank">https://MyFunctionApp.azurewebsites.net/api/HttpTrigger</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+              
+              <!-- Troubleshooting -->
+              <section class="mt-4">
+                <h5>Troubleshooting</h5>
+                <div class="accordion" id="troubleshootingAccordion">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#troubleshooting1">
+                        Function App Fails to Start
+                      </button>
+                    </h2>
+                    <div id="troubleshooting1" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+                      <div class="accordion-body">
+                        Check logs in <strong>Azure Portal</strong> > <strong>Function App</strong> > <strong>Logs</strong>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#troubleshooting2">
+                        Static Web App 404 Errors
+                      </button>
+                    </h2>
+                    <div id="troubleshooting2" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+                      <div class="accordion-body">
+                        Ensure <code>output: "standalone"</code> is set in <code>next.config.js</code>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              
+              <div class="alert alert-warning mt-4">
+                <strong>Note:</strong> Replace placeholder names (<code>MyResourceGroup</code>, <code>MyFunctionApp</code>, etc.) with your actual project names.
+              </div>
+            </article>
+            
+            <!-- Legal Section -->
+            <article class="appendix-section mt-5">
+              <h3 id="legal" class="mb-4">Legal Issues and Processes</h3>
+              
+              <div class="card">
+                <div class="card-header bg-dark text-white">
+                  <h5 class="mb-0">GDPR Compliance</h5>
+                </div>
+                <div class="card-body">
+                  <p>The FinSync project adheres to GDPR regulations (effective May 25, 2018) ensuring proper handling of personal data with strict controls on collection, use, sharing, storage, security, and disposal.</p>
+                  
+                  <h6 class="mt-3">Key Principles</h6>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          Lawfulness, Fairness, Transparency
+                          <span class="badge bg-primary rounded-pill"><i class="bi bi-check-lg"></i></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          Purpose Limitation
+                          <span class="badge bg-primary rounded-pill"><i class="bi bi-check-lg"></i></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          Data Minimization
+                          <span class="badge bg-primary rounded-pill"><i class="bi bi-check-lg"></i></span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          Accuracy
+                          <span class="badge bg-primary rounded-pill"><i class="bi bi-check-lg"></i></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          Storage Limitation
+                          <span class="badge bg-primary rounded-pill"><i class="bi bi-check-lg"></i></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          Integrity & Confidentiality
+                          <span class="badge bg-primary rounded-pill"><i class="bi bi-check-lg"></i></span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <h6 class="mt-4">Data Subject Rights</h6>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <ul>
+                        <li>Right to be Informed</li>
+                        <li>Right of Access</li>
+                        <li>Right to Rectification</li>
+                        <li>Right to Erasure</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6">
+                      <ul>
+                        <li>Right to Restrict Processing</li>
+                        <li>Right to Data Portability</li>
+                        <li>Right to Object</li>
+                        <li>Right to Prevent Automated Decision-Making</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card mt-3">
+                <div class="card-header bg-dark text-white">
+                  <h5 class="mb-0">Intellectual Property</h5>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h6>Copyright</h6>
+                      <p>All source code and creative works are protected under copyright law with exclusive rights to reproduce, distribute, and adapt the work.</p>
+                    </div>
+                    <div class="col-md-6">
+                      <h6>Licensing</h6>
+                      <p>The FinSync project uses a closed-source license, with all software remaining property of Chanel. Third-party components are properly attributed.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Development Blog -->
+            <article class="appendix-section mt-5">
+              <h3 id="deployment-blog" class="mb-4">Development Blog</h3>
+              <div class="card">
+                <div class="card-body text-center">
+                  <i class="bi bi-journal-text display-4 text-primary mb-3"></i>
+                  <p class="lead">The development blog documents the progress of the FinSync project with monthly updates, challenges, and solutions.</p>
+                  <a href="https://reflect.ucl.ac.uk/comp0016-24-25-fynsync/" class="btn btn-primary" target="_blank">
+                    <i class="bi bi-box-arrow-up-right"></i> Visit Development Blog
+                  </a>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Monthly Videos -->
+            <article class="appendix-section mt-5">
+              <h3 id="monthly-video" class="mb-4">Monthly Videos</h3>
+              <p class="lead">Video documentation of the project's progress, featuring demonstrations and team discussions.</p>
+              
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header bg-primary text-white">
+                      November Progress
+                    </div>
+                    <div class="card-body p-0">
+                      <div class="video-container">
+                        <iframe src="https://liveuclac-my.sharepoint.com/personal/zcabiel_ucl_ac_uk/_layouts/15/embed.aspx?UniqueId=c6dfdc0a-199d-405b-b7d7-73ad6b78b57d&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" allowfullscreen title="November Progress Update"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header bg-primary text-white">
+                      December Progress
+                    </div>
+                    <div class="card-body p-0">
+                      <div class="video-container">
+                        <iframe src="https://liveuclac-my.sharepoint.com/personal/zcabiel_ucl_ac_uk/_layouts/15/embed.aspx?UniqueId=128a0536-a779-4ddc-9aa8-2c47d3fe6838&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" allowfullscreen title="December Progress Update"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header bg-primary text-white">
+                      January Progress
+                    </div>
+                    <div class="card-body p-0">
+                      <div class="video-container">
+                        <iframe src="https://liveuclac-my.sharepoint.com/personal/zcabiel_ucl_ac_uk/_layouts/15/embed.aspx?UniqueId=74ef6510-364e-484f-bd0b-534469578643&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" allowfullscreen title="January Progress Update"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header bg-primary text-white">
+                      February Progress
+                    </div>
+                    <div class="card-body p-0">
+                      <div class="video-container">
+                        <iframe src="https://liveuclac-my.sharepoint.com/personal/zcabas4_ucl_ac_uk/_layouts/15/embed.aspx?UniqueId=b0364b9e-0c05-4a23-a6bc-db1df51233a6&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" allowfullscreen title="February Progress Update"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer remains unchanged -->
+  <footer id="footer" class="footer">
+    <!-- ... existing footer content ... -->
+  </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
