@@ -79,7 +79,7 @@
             </ul>
           </li>
 
-    
+
           <li class="dropdown"><a href="uidesign.html"><span>UI Design</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#sketches">Sketches</a></li>
@@ -198,7 +198,9 @@
             }
           </script>
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/Microsoft_Azure_Logo.svg.png" class="img-fluid" alt=""></div>
+
+            <div class="swiper-slide"><img src="assets/img/clients/Microsoft_Azure_Logo.svg.png" class="img-fluid"
+                alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/ucl.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/chanel.png" class="img-fluid" alt=""></div>
 
@@ -226,7 +228,8 @@
         <h4>Key Features:</h4>
         <ul>
           <li>
-            <strong>Automatic Trigger</strong>: The function is triggered by new file uploads to the specified container.
+            <strong>Automatic Trigger</strong>: The function is triggered by new file uploads to the specified
+            container.
           </li>
           <li>
             <strong>File-Specific Processing</strong>: Calls different functions (e.g., <code>process_unbilled</code>,
@@ -275,10 +278,12 @@
         <h4>Key Features:</h4>
         <ul>
           <li>
-            <strong>Automatic Trigger</strong>: The function is triggered by new CSV file uploads to the specified container.
+            <strong>Automatic Trigger</strong>: The function is triggered by new CSV file uploads to the specified
+            container.
           </li>
           <li>
-            <strong>ADX Integration</strong>: Uses the Azure Data Explorer (ADX) Python SDK to ingest data into ADX tables.
+            <strong>ADX Integration</strong>: Uses the Azure Data Explorer (ADX) Python SDK to ingest data into ADX
+            tables.
           </li>
           <li>
             <strong>Dynamic Table Creation</strong>: Dynamically creates tables in ADX based on the file name.
@@ -319,15 +324,15 @@
         </pre>
 
         <!-- Diagram -->
-        <h4>BlobIngestTrigger Workflow:</h4>
+        <h4>Data Ingestion Workflow</h4>
         <p>
-          Below is a sequence diagram illustrating the workflow of the <code>BlobIngestTrigger</code>:
-        </p>
-        <img src="blob-ingest-trigger-diagram.png" alt="BlobIngestTrigger Workflow Diagram" />
-        <p>
-          The diagram shows how the function is triggered by a CSV file upload, dynamically creates a table in ADX, and
+          The diagram below shows how the function is triggered by an Excel file upload, dynamically creates a table in
+          ADX,
+          and
           ingests the data into the table.
         </p>
+        <img src="assets/img/dataflow.png" sizes="100vw" alt="Data Ingestion Workflow"
+          style="max-width: 100%; height: auto; width: 50%;">
       </div>
     </section>
     <footer id="footer" class="footer">
