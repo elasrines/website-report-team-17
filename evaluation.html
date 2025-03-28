@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>FinSync - Research</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+ 
+  <!-- Favicons -->
+  <link href="assets/img/flogoo.png" rel="icon">
+  <link href="assets/img/flogoo" rel="apple-touch-icon">
+ 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+ 
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ 
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+ 
+  <!-- =======================================================
+  * Template Name: Arsha
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+ 
+ 
+ 
+</head>
+ 
+<body class="index-page">
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+ 
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment below if you wish to use an image logo -->
+        <img src="assets/img/flogoo.png" alt="">
+      </a>
+ 
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li class="dropdown"><a href="#hero"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#pitchvideo">Pitch Video</a></li>
+              <li><a href="#devteam">Our Dev Team</a></li>
+              <li><a href="#ganttchart">Our Gantt Chart</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="requirements.html"><span>Requirements</span> <i
+                class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#partnerintroandbg">Partner Introduction and Project background</a></li>
+              <li><a href="#projectgoals">Project Goals</a></li>
+              <li><a href="#reqgathering">Requirement gathering</a></li>
+              <li><a href="#personas">Personas</a></li>
+              <li><a href="#usecases">Use Cases</a></li>
+              <li><a href="#moscow">MoSCoW Requirements List</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="research.html"><span>Research</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#relatedprojects">Related Projects Review</a></li>
+              <li><a href="#technologyreview">Technology Review</a></li>
+              <li><a href="#summary">A summary of our technical decisions</a></li>
+              <li><a href="#references">References</a></li>
+            </ul>
+          </li>
+ 
+ 
+          <li class="dropdown"><a href="uidesign.html"><span>UI Design</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#sketches">Sketches</a></li>
+              <li><a href="#wireframes">Wireframes</a></li>
+            </ul>
+          </li>
+ 
+          <li class="dropdown"><a href="systemdesign.html"><span>System Design</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="architecture.html">System architecture diagram</a></li>
+              <li><a href="#datastorage">Data storage</a></li>
+            </ul>
+          </li>
+ 
+          <li class="dropdown"><a href="implementation.html"><span>Implementation</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="implementation-frontend.html">Frontend Code</a></li>
+              <li><a href="implementation-backend.html">Backend Code</a></li>
+            </ul>
+          </li>
+ 
+          <li class="dropdown"><a href="testing.html"><span>Testing</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#testingstrategy">Testing Strategy</a></li>
+              <li><a href="#unit-integration">Unit and integration testing</a></li>
+              <li><a href="#user-acceptance">User acceptance testing</a></li>
+            </ul>
+          </li>
+ 
+          <li class="dropdown"><a href="evaluation.html"><span>Evaluation</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#summary-achievements">Summary of achievements</a></li>
+              <li><a href="#critical-evalutation">Critical evaluation of the project</a></li>
+              <li><a href="#future-work">Future Work</a></li>
+            </ul>
+          </li>
+ 
+          <li class="dropdown"><a href="appencides.html"><span>Appendices</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#user-manual">User Manual</a></li>
+              <li><a href="#deployment-manual">Deployment manual</a></li>
+              <li><a href="#legal">Legal issues and processes</a></li>
+              <li><a href="#deployment-blog">Development Blog</a></li>
+              <li><a href="#monthly-video">Monthly Video</a></li>
+ 
+            </ul>
+          </li>
+ 
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+ 
+    </div>
+  </header>
+ 
+  <main class="main">
+ 
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+ 
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+            <h1>FinSync - Team 17</h1>
+            <p>Revolutionizing Financial Reporting at Chanel​</p>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
+            <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+          </div>
+        </div>
+      </div>
+ 
+    </section><!-- /Hero Section -->
+ 
+    <!-- Clients Section -->
+    <section id="clients" class="clients section light-background">
+ 
+      <div class="container" data-aos="zoom-in">
+ 
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 40
+                },
+                "480": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 60
+                },
+                "640": {
+                  "slidesPerView": 4,
+                  "spaceBetween": 80
+                },
+                "992": {
+                  "slidesPerView": 5,
+                  "spaceBetween": 120
+                },
+                "1200": {
+                  "slidesPerView": 6,
+                  "spaceBetween": 120
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="assets/img/clients/Microsoft_Azure_Logo.svg.png" class="img-fluid"
+                alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/ucl.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/chanel.png" class="img-fluid" alt=""></div>
+          </div>
+ 
+        </div>
+ 
+    </section><!-- /Clients Section -->
+ 
+    <section id="summary-achievements" class="section light-background">
+      <div class="container">
+        <h1 class="section-title">Achievements</h1>
+        <h2>MoSCoW Requirements:</h2>
+        <table style="width:100%; border-collapse: collapse; border: 1px solid black;">
+          <thead>
+            <tr style="border: 1px solid black;">
+              <th style="border: 1px solid black; padding: 8px;">ID</th>
+              <th style="border: 1px solid black; padding: 8px;">Requirement</th>
+              <th style="border: 1px solid black; padding: 8px;">Priority</th>
+              <th style="border: 1px solid black; padding: 8px;">State</th>
+              <th style="border: 1px solid black; padding: 8px;">Contributors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">1</td>
+              <td style="border: 1px solid black; padding: 8px;">Automated Parsing of Spreadsheets for Budget Report
+                Generation</td>
+              <td style="border: 1px solid black; padding: 8px;">Must Have</td>
+              <td style="border: 1px solid black; padding: 8px;">&#10003;</td>
+              <td style="border: 1px solid black; padding: 8px;">Anika, Ines</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">2</td>
+              <td style="border: 1px solid black; padding: 8px;">Export Functionality for Processed Budget Report  </td>
+              <td style="border: 1px solid black; padding: 8px;">Must Have</td>
+              <td style="border: 1px solid black; padding: 8px;">&#10003;</td>
+              <td style="border: 1px solid black; padding: 8px;">Ines</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">3</td>
+              <td style="border: 1px solid black; padding: 8px;">Invoice Uploading with Automated Data Extraction </td>
+              <td style="border: 1px solid black; padding: 8px;">Should Have</td>
+              <td style="border: 1px solid black; padding: 8px;">&#10003;</td>
+              <td style="border: 1px solid black; padding: 8px;">Anika, Ines, Daren</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">4</td>
+              <td style="border: 1px solid black; padding: 8px;">Real-Time Expense Reconciliation from Multiple Data
+                Sources </td>
+              <td style="border: 1px solid black; padding: 8px;">Should Have</td>
+              <td style="border: 1px solid black; padding: 8px;">&#10003;</td>
+              <td style="border: 1px solid black; padding: 8px;">Anika, Ines</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">5</td>
+              <td style="border: 1px solid black; padding: 8px;">Interactive Dashboard for Data Visualization </td>
+              <td style="border: 1px solid black; padding: 8px;">Could Have</td>
+              <td style="border: 1px solid black; padding: 8px;">&#10003;</td>
+              <td style="border: 1px solid black; padding: 8px;">Anika, Ines, Daren</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">6</td>
+              <td style="border: 1px solid black; padding: 8px;">AI-Powered Chatbot for User Assistance and Engagement
+              </td>
+              <td style="border: 1px solid black; padding: 8px;">Could Have</td>
+              <td style="border: 1px solid black; padding: 8px;">&#10003;</td>
+              <td style="border: 1px solid black; padding: 8px;">Daren</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        <h2>Non-Functional Requirements:</h2>
+        <table style="width:100%; border-collapse: collapse; border: 1px solid black;">
+          <thead>
+            <tr style="border: 1px solid black;">
+              <th style="border: 1px solid black; padding: 8px;">ID</th>
+              <th style="border: 1px solid black; padding: 8px;">Requirement</th>
+              <th style="border: 1px solid black; padding: 8px;">Priority</th>
+              <th style="border: 1px solid black; padding: 8px;">State</th>
+              <th style="border: 1px solid black; padding: 8px;">Contributors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">1</td>
+              <td style="border: 1px solid black; padding: 8px;">High performance</td>
+              <td style="border: 1px solid black; padding: 8px;">Must Have</td>
+              <td style="border: 1px solid black; padding: 8px;">&#10003;</td>
+              <td style="border: 1px solid black; padding: 8px;">Anika, Ines, Daren</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">2</td>
+              <td style="border: 1px solid black; padding: 8px;">Robust security measures</td>
+              <td style="border: 1px solid black; padding: 8px;">Must Have</td>
+              <td style="border: 1px solid black; padding: 8px;">&#10003;</td>
+              <td style="border: 1px solid black; padding: 8px;">Anika</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">3</td>
+              <td style="border: 1px solid black; padding: 8px;">Reliable data processing</td>
+              <td style="border: 1px solid black; padding: 8px;">Must Have</td>
+              <td style="border: 1px solid black; padding: 8px;">&#10003;</td>
+              <td style="border: 1px solid black; padding: 8px;">Anika, Ines</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">4</td>
+              <td style="border: 1px solid black; padding: 8px;">Integrity checks</td>
+              <td style="border: 1px solid black; padding: 8px;">Must Have</td>
+              <td style="border: 1px solid black; padding: 8px;">&#10003;</td>
+              <td style="border: 1px solid black; padding: 8px;">Anika, Ines</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">5</td>
+              <td style="border: 1px solid black; padding: 8px;">Scalability to accommodate growing data volumes and
+                user base</td>
+              <td style="border: 1px solid black; padding: 8px;">Could Have</td>
+              <td style="border: 1px solid black; padding: 8px;">&#10003;</td>
+              <td style="border: 1px solid black; padding: 8px;">Anika, Ines, Daren</td>
+            </tr>
+          </tbody>
+        </table><br>
+        <h2>Known Bugs</h2>
+        <table style="width:100%; border-collapse: collapse; border: 1px solid black;">
+          <thead>
+            <tr style="border: 1px solid black;">
+              <th style="border: 1px solid black; padding: 8px;">ID</th>
+              <th style="border: 1px solid black; padding: 8px;">Bug Description</th>
+              <th style="border: 1px solid black; padding: 8px;">Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">1</td>
+              <td style="border: 1px solid black; padding: 8px;">Time taken to generate spreadsheet increases as more
+                data is uploaded</td>
+              <td style="border: 1px solid black; padding: 8px;">Medium</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">2</td>
+              <td style="border: 1px solid black; padding: 8px;">Pie chart appears too large for card</td>
+              <td style="border: 1px solid black; padding: 8px;">Low</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">2</td>
+              <td style="border: 1px solid black; padding: 8px;">Pie chart text overlaps if there are many categories
+              </td>
+              <td style="border: 1px solid black; padding: 8px;">Low</td>
+            </tr>
+          </tbody>
+        </table><br>
+        <h2>Individual Contribution</h2>
+        <h3>System Artefacts:</h3>
+        <table style="width:100%; border-collapse: collapse; border: 1px solid black;">
+          <thead>
+            <tr style="border: 1px solid black;">
+              <th style="border: 1px solid black; padding: 8px;">Work Packages</th>
+              <th style="border: 1px solid black; padding: 8px;">Anika</th>
+              <th style="border: 1px solid black; padding: 8px;">Ines</th>
+              <th style="border: 1px solid black; padding: 8px;">Daren</th>
+              <th style="border: 1px solid black; padding: 8px;">Aziret</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">Research and Experiments</td>
+              <td style="border: 1px solid black; padding: 8px;">20%</td>
+              <td style="border: 1px solid black; padding: 8px;">20%</td>
+              <td style="border: 1px solid black; padding: 8px;">60%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">UI Design</td>
+              <td style="border: 1px solid black; padding: 8px;">33.3%</td>
+              <td style="border: 1px solid black; padding: 8px;">33.3%</td>
+              <td style="border: 1px solid black; padding: 8px;">33.3%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">Coding</td>
+              <td style="border: 1px solid black; padding: 8px;">40%</td>
+              <td style="border: 1px solid black; padding: 8px;">40%</td>
+              <td style="border: 1px solid black; padding: 8px;">20%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">Testing</td>
+              <td style="border: 1px solid black; padding: 8px;">33.3%</td>
+              <td style="border: 1px solid black; padding: 8px;">33.3%</td>
+              <td style="border: 1px solid black; padding: 8px;">33.3%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">Overall Contribution</td>
+              <td style="border: 1px solid black; padding: 8px;">33.3%</td>
+              <td style="border: 1px solid black; padding: 8px;">33.3%</td>
+              <td style="border: 1px solid black; padding: 8px;">33.3%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+            </tr>
+          </tbody>
+        </table><br>
+        <h3>Website Report:</h3>
+        <table style="width:100%; border-collapse: collapse; border: 1px solid black;">
+          <thead>
+            <tr style="border: 1px solid black;">
+              <th style="border: 1px solid black; padding: 8px;">Work Packages</th>
+              <th style="border: 1px solid black; padding: 8px;">Anika</th>
+              <th style="border: 1px solid black; padding: 8px;">Ines</th>
+              <th style="border: 1px solid black; padding: 8px;">Daren</th>
+              <th style="border: 1px solid black; padding: 8px;">Aziret</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">Website Template and Setups</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">100%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">Home</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">100%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">Video</td>
+              <td style="border: 1px solid black; padding: 8px;">42.5%</td>
+              <td style="border: 1px solid black; padding: 8px;">42.5%</td>
+              <td style="border: 1px solid black; padding: 8px;">15%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">Requirements</td>
+              <td style="border: 1px solid black; padding: 8px;">15%</td>
+              <td style="border: 1px solid black; padding: 8px;">85%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">Research</td>
+              <td style="border: 1px solid black; padding: 8px;">100%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">UI Design</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">100%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">System Design</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">100%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">Implementation</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">100%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">Testing</td>
+              <td style="border: 1px solid black; padding: 8px;">25%</td>
+              <td style="border: 1px solid black; padding: 8px;">75%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">Evaluation and Future Work</td>
+              <td style="border: 1px solid black; padding: 8px;">95%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">5%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">User and Deployment Manuals</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">100%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">Legal Issues</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">10%</td>
+              <td style="border: 1px solid black; padding: 8px;">90%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">Blog and Monthly Video</td>
+              <td style="border: 1px solid black; padding: 8px;">42.5%</td>
+              <td style="border: 1px solid black; padding: 8px;">42.5%</td>
+              <td style="border: 1px solid black; padding: 8px;">0%</td>
+              <td style="border: 1px solid black; padding: 8px;">15%</td>
+            </tr>
+            <tr style="border: 1px solid black;">
+              <td style="border: 1px solid black; padding: 8px;">Overall Contribution</td>
+              <td style="border: 1px solid black; padding: 8px;">35%</td>
+              <td style="border: 1px solid black; padding: 8px;">35%</td>
+              <td style="border: 1px solid black; padding: 8px;">29%</td>
+              <td style="border: 1px solid black; padding: 8px;">1%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+ 
+    <section id="critical-evaluation" class="section light-background">
+      <div class="container">
+        <h1 class="section-title">Critical Evaluation</h1>
+        <h2> User interface and experience</h2>
+        <p>
+            Our goal was to create a clean, sleek looking user interface matching Chanel?s black and white minimalist aesthetic. We ensured that upload instructions were clear, and toast notifications informed users when data processing was occurring. General feedback from testers and clients was positive, with users stating that the website flow was intuitive and provided an overall enjoyable experience. <br>
+            <br>Overall, a rating of Good was given to our UI and UX.<br>
+        </p>
+        <h2>Functionality</h2>
+        <p>
+            The data matching part of the project was tested with different sets of data to check for accuracy, ensuring that it was reliable. The function apps were also extensively tested to ensure that the triggers worked as expected consistently. There were no reported issues regarding functionality with our web app. <br>
+            <br>We rate our functionality to be Very Good.<br>
+        </p>
+        <h2>Stability</h2>
+        <p>
+            As a team, we completed extensive unit testing, achieving over 90% test coverage for both the backend and the frontend. In addition to this, we wrote integration tests to check the interactions between the different components of the web app, and wrote performance tests to check how different loads are handled by the backend.  <br>
+            <br>Overall, our Stability is Very Good.<br>
+        </p>
+        <h2>Efficiency</h2>
+        <p>
+            Our performance tests found that data ingestion into ADX remains fast as file size increases, and the speed of conversion from Excel to CSV does not change much as file size increases. However, the excel generation function slows down a non-negligible amount as the amount of data in ADX increases. <br>
+            <br>We give a rating of Adequate to our efficiency.<br>
+        </p>
+        <h2>Compatibility</h2>
+        <p>
+            The web app can be run locally, as well as deployed on a public static web page. It is compatible with most browsers, allowing for users with different devices to access the page.  <br>
+            <br>We rate our compatibility to be Good.<br>
+        </p>
+        <h2>Maintainability</h2>
+        <p>
+            Each feature is separately housed in an Azure function, allowing for bugs to be easily identified and fixed without interrupting other parts of the project. The project is also fairly well-documented, allowing our clients to understand how the app works.   <br>
+            <br>Overall, a rating of Good was given to our Maintainability.<br>
+        </p>
+        <h2>Project management</h2>
+        <p>
+            As a group, we used a variety of tools to manage the progress of our project. We communicated on various platforms: Teams, Whatsapp and email in order to keep track of what tasks had been completed and what there was left to do. We also had weekly meetings to update each other of our progress and assign new tasks. Lastly, we also used a Gantt chart to more accurately track the timeline of our tasks.  <br>
+            <br>Overall, our project management was Very Good.
+        </p>
+      </div>
+    </section>
+ 
+    <section id="future-work" class="section light-background">
+    <h1 class="section-title">Future Work</h1>
+      <div class="container">
+        <h2>Potential improvements:</h2>
+        <h3>Data Matching</h3>
+        <ul>
+            <p>
+                One major improvement that could be made is to expand the accepted Excel sheet structures to allow users to insert more data to be summarized. This would involve customizing the cleaning and handling of the new spreadsheet type and finding a way to merge the pre-existing sheets with the new sheet. In addition to this, more accepted file types, such as PDFs could be added, which could be done by using OCR to extract the relevant text for processing.
+            </p>
+        </ul>
+        <h3>Query page</h3>
+        <ul>
+          <li>Improving the display of thoughts, action inputs and outputs with a better user interface in the dropdown menu.</li>
+          <li>Implementing proper multi-turn conversation by passing a list of messages rather than a query to the Agent
+          </li>
+          <li>Give users the option to connect to their own inference server rather than Azure OpenAI Service (e.g
+            Ollama)</li>
+          <li>Displaying a relevant DataFrame preview alongside the query results</li>
+          </li>
+        </ul>
+      </div>
+    </section>
+ 
+    <footer id="footer" class="footer">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="d-flex align-items-center">
+              <span class="sitename">FinSync</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Team 17 Website Report</p>
+            </div>
+          </div>
+ 
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+            </ul>
+          </div>
+ 
+ 
+ 
+        </div>
+      </div>
+ 
+      <div class="container copyright text-center mt-4">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">FinSync</strong> <span>All Rights Reserved</span></p>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+ 
+    </footer>
+ 
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+ 
+    <!-- Preloader -->
+    <div id="preloader"></div>
+ 
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+ 
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+ 
+</body>
+ 
+</html>
