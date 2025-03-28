@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Implementation - FinSync</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <link href="assets/img/flogoo.png" rel="icon">
+  <link href="assets/img/flogoo" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@400;500;600;700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/flogoo.png" alt="FinSync Logo">
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#implementation-frontend">Frontend</a></li>
+          <li><a href="#implementation-backend">Backend</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section id="hero" class="hero dark-background">
+      <div class="container">
+        <h1>Implementation</h1>
+        <p>Frontend & Backend</p>
+      </div>
+    </section>
+
+    <!-- Frontend Section -->
+    <section id="implementation-frontend" class="section light-background">
+      <div class="container">
+        <h1>Frontend Implementation</h1>
+        <section id="implementation-frontend" class="section light-background">
+            <div class="container">
+              <h2>Explanation of Key Frontend Features</h2>
+              <h3>Graphing Capabilities: Processing Summary Excel File</h3>
+              <p>
+                The <strong>Divison Tables</strong> rely on data extracted from a summary Excel file stored in Azure
+                Blob Storage.
+                This file is processed on the client-side using the Microsoft Blob SDK and parsed into structured data for
+                visualization.
+                Below is a detailed explanation of how the Excel file is processed into a usable format for the frontend
+                tables
+              </p>
+      
+              <!-- Step 1: Raw Data Extraction -->
+              <h4>Step 1: Raw Data Extraction</h4>
+              <p>
+                The Excel file is downloaded from Azure Blob Storage and read as a raw 2D array of strings, where each row
+                represents
+                a line in the spreadsheet and each column represents a cell. This raw data is passed to the
+                <code>parseExcelData</code>
+                function for processing.
+              </p>
+              <pre>
+          <strong>
+          <code>
+          const dataRows = rawData.slice(2); // Skip header rows
+          if (!rawData || rawData.length < 3) return []; // Handle empty or invalid data
+          </code>
+          </strong>
+              </pre>
+      
+              <!-- Step 2: Campaign Data Extraction -->
+              <h4>Step 2: Campaign Data Extraction</h4>
+              <p>
+                Each row in the spreadsheet is processed to extract <strong>campaign-level financial metrics</strong>.
+                The function distinguishes between three types of rows:
+              </p>
+              <ul>
+                <li><strong>Main Campaign Rows:</strong> Rows with a PO number.</li>
+                <li><strong>Sub-Campaign Rows:</strong> Rows with a name but no PO number.</li>
+                <li><strong>Channel Rows:</strong> Rows with channel-specific financial data.</li>
+              </ul>
+      
+              <!-- Main Campaign Rows -->
+              <h5>Main Campaign Rows</h5>
+              <p>
+                If a row contains a PO number, it is treated as a main campaign. Financial metrics are extracted, and the
+                campaign
+                is added to the list.
+              </p>
+              <pre>
+          <strong>
+          <code>
+          if (row[0]) {
+            campaigns.push({
+              poNumber: String(row[0] || ""),
+              name: String(row[1] || ""),
+              channels: [{
+                name: String(row[2] || ""),
+                financials: { ...financials },
+              }],
+              financials: { ...financials },
+              market: String(row[12] || ""),
+            });
+          }
+          </code>
+          </strong>
+              </pre>
+      
+              <!-- Sub-Campaign Rows -->
+              <h5>Sub-Campaign Rows</h5>
+              <p>
+                If a row has a name but no PO number, it is treated as a sub-campaign. The function identifies the parent
+                campaign
+                by searching previous rows for a main campaign. The sub-campaign is then added to the list.
+              </p>
+              <pre>
+          <strong>
+          <code>
+          else if (row[1] && row[2]) {
+            let parentName = "";
+            for (let j = i - 1; j >= 0; j--) {
+              if (dataRows[j] && dataRows[j][0] && dataRows[j][1]) {
+                parentName = String(dataRows[j][1] || "");
+                break;
+              }
+            }
+          
+            campaigns.push({
+              poNumber: "",
+              name: String(row[1] || ""),
+              channels: [{
+                name: String(row[2] || ""),
+                financials: { ...financials },
+              }],
+              financials: { ...financials },
+              market: String(row[12] || ""),
+              isSubCampaign: true,
+              parentCampaignName: parentName,
+            });
+          }
+          </code>
+          </strong>
+              </pre>
+      
+              <!-- Channel Rows -->
+              <h5>Channel Rows</h5>
+              <p>
+                If a row contains channel-specific data but no campaign name or PO number, it is treated as a channel row.
+                The financial metrics are added to the most recent campaign, and the campaign totals are updated.
+              </p>
+              <pre>
+          <strong>
+          <code>
+          else if (row[2] && campaigns.length > 0) {
+            const lastCampaign = campaigns[campaigns.length - 1];
+            lastCampaign.channels.push({
+              name: String(row[2] || ""),
+              financials: { ...financials },
+            });
+          
+            // Update campaign totals
+            lastCampaign.financials.netBillable += financials.netBillable;
+            lastCampaign.financials.agencyCommission += financials.agencyCommission;
+            lastCampaign.financials.invoiceVal += financials.invoiceVal;
+          }
+          </code>
+          </strong>
+              </pre>
+      
+              <!-- Step 3: Financial Metrics Extraction -->
+              <h4>Step 3: Financial Metrics Extraction</h4>
+              <p>
+                For each row, financial metrics are extracted and converted into numbers. If a cell is empty, the value
+                defaults
+                to <code>0</code>.
+              </p>
+              <pre>
+          <strong>
+          <code>
+          const financials: FinancialMetrics = {
+            netBillable: Number(row[4]) || 0,
+            agencyCommission: Number(row[5]) || 0,
+            levyASBOF: Number(row[6]) || 0,
+            invoiceVal: Number(row[7]) || 0,
+            plannedSpend: Number(row[8]) || 0,
+            reservedBudget: Number(row[9]) || 0,
+            totalBudget: Number(row[10]) || 0,
+            chanelBudget: Number(row[11]) || 0,
+          };
+          </code>
+          </strong>
+              </pre>
+      
+              <!-- Step 4: Returning Structured Data -->
+              <h4>Step 4: Returning Structured Data</h4>
+              <p>
+                After processing all rows, the function returns a structured list of campaigns, each containing:
+              </p>
+              <ul>
+                <li><strong>PO Number:</strong> Unique identifier for the campaign.</li>
+                <li><strong>Name:</strong> Campaign name.</li>
+                <li><strong>Channels:</strong> List of channels with financial data.</li>
+                <li><strong>Financial Metrics:</strong> Aggregated financial data for the campaign.</li>
+                <li><strong>Market:</strong> Market associated with the campaign.</li>
+                <li><strong>Parent Campaign Name:</strong> For sub-campaigns.</li>
+              </ul>
+              Using this structured data we map through the campaigns and channels to create tables for each division.
+              <br>
+              <br>
+              <img src="assets/img/tables.jpeg" alt="An example of tables created from the processed data"
+                class="rounded img-fluid animated">
+            </div>
+          </section>
+      
+      </div>
+    </section>
+
+    <!-- Backend Section -->
+    <section id="implementation-backend" class="section light-background">
+      <div class="container">
+        <h1>Backend Implementation</h1>
+        <section id="implementation-backend" class="section light-background">
+            <div class="container">
+              <h2>Explanation of Key Backend Features</h2>
+              <br><br>
+      
+              <!-- BlobTriggerFunction -->
+              <h3>1. BlobTriggerFunction</h3>
+              <p>
+                The <strong>BlobTriggerFunction</strong> is an Azure Function that processes files uploaded to the
+                <code>subcontractor-documents</code> container in Azure Blob Storage. It is triggered automatically whenever a
+                new file is uploaded, and based on the file name, it calls specific processing functions to handle the file.
+              </p>
+      
+              <!-- Key Features -->
+              <h4>Key Features:</h4>
+              <ul>
+                <li>
+                  <strong>Automatic Trigger</strong>: The function is triggered by new file uploads to the specified
+                  container.
+                </li>
+                <li>
+                  <strong>File-Specific Processing</strong>: Calls different functions (e.g., <code>process_unbilled</code>,
+                  <code>process_budget_tracker</code>) based on the file name.
+                </li>
+                <li>
+                  <strong>Blob Service Integration</strong>: Uses the Azure Blob Service Client to interact with Blob Storage.
+                </li>
+              </ul>
+      
+              <!-- Implementation Details -->
+              <h4>Implementation Details:</h4>
+              <p>
+                The function uses the <code>@blob_trigger</code> decorator to specify the container path and connection
+                string.
+                Below is a snippet showing how the function is triggered and how it processes files:
+              </p>
+              <pre>
+          <strong>
+          <code>
+          @app.blob_trigger(arg_name="myblob", path="subcontractor-documents/{name}",
+                            connection="AzureWebJobsStorage")
+          def BlobTriggerFunction(myblob: func.InputStream):
+              logging.info(f"Processing file: {myblob.name}")
+          
+              # Call specific processing functions based on file name
+              if "Chanel UK Billed.xlsx" in myblob.name:
+                  process_unbilled(myblob.name, blob_service_client)
+              elif "Budget Tracker.xlsx" in myblob.name:
+                  process_budget_tracker(myblob.name, blob_service_client)
+          </code>
+          </strong>
+              </pre>
+      
+              <!-- BlobIngestTrigger -->
+              <h3>2. BlobIngestTrigger</h3>
+              <p>
+                The <strong>BlobIngestTrigger</strong> is an Azure Function that ingests CSV files into Azure Data Explorer
+                (ADX).
+                It is triggered automatically whenever a new CSV file is uploaded to the <code>csv-conversion</code>
+                container.
+                The function dynamically creates tables in ADX based on the file name and ingests the data.
+              </p>
+      
+              <!-- Key Features -->
+              <h4>Key Features:</h4>
+              <ul>
+                <li>
+                  <strong>Automatic Trigger</strong>: The function is triggered by new CSV file uploads to the specified
+                  container.
+                </li>
+                <li>
+                  <strong>ADX Integration</strong>: Uses the Azure Data Explorer (ADX) Python SDK to ingest data into ADX
+                  tables.
+                </li>
+                <li>
+                  <strong>Dynamic Table Creation</strong>: Dynamically creates tables in ADX based on the file name.
+                </li>
+              </ul>
+      
+              <!-- Implementation Details -->
+              <h4>Implementation Details:</h4>
+              <p>
+                The function uses the <code>@blob_trigger</code> decorator to specify the container path and connection
+                string.
+                It dynamically creates tables in ADX and ingests data using the ADX Python SDK. Below is a snippet showing the
+                key parts of the implementation:
+              </p>
+              <pre>
+          <strong>
+          <code>
+          @app.blob_trigger(arg_name="myblob", path="csv-conversion/{name}", connection="AzureWebJobsStorage")
+          def blob_ingest_function(myblob: func.InputStream):
+              logging.info(f"New CSV detected: {myblob.name}")
+          
+              # Extract table name from file name
+              table_name = myblob.name.replace(".csv", "").replace(" ", "_")
+          
+              # ADX Ingestion setup
+              ingestion_props = IngestionProperties(
+                  database=os.environ["ADX_DATABASE"],
+                  table=table_name,
+                  data_format=DataFormat.CSV,
+                  additional_properties={"createTable": True}
+              )
+          
+              # Start ingestion
+              ingest_client.ingest_from_blob(BlobDescriptor(blob_url_with_sas, blob_size), ingestion_properties=ingestion_props)
+              logging.info(f"Ingestion for table {table_name} started.")
+          </code>
+          </strong>
+              </pre>
+      
+              <!-- Diagram -->
+              <h4>Data Ingestion Workflow</h4>
+              <p>
+                The diagram below shows how the function is triggered by an Excel file upload, dynamically creates a table in
+                ADX,
+                and
+                ingests the data into the table.
+              </p>
+              <img src="assets/img/dataflow.png" sizes="100vw" alt="Data Ingestion Workflow"
+                style="max-width: 100%; height: auto; width: 50%;">
+            </div>
+          </section>
+          <footer id="footer" class="footer">
+            <div class="container footer-top">
+              <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                  <a href="index.html" class="d-flex align-items-center">
+                    <span class="sitename">FinSync</span>
+                  </a>
+                  <div class="footer-contact pt-3">
+                    <p>Team 17 Website Report</p>
+                  </div>
+                </div>
+      
+                <div class="col-lg-2 col-md-3 footer-links">
+                  <h4>Useful Links</h4>
+                  <ul>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+      
+        
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">FinSync</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Team 17 Website Report</p>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">FinSync</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
