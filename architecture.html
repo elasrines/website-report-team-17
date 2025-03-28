@@ -4,9 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>FinSync - System Architecture</title>
+  <title>UI Design - FinSync</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
+  
 
   <!-- Favicons -->
   <link href="assets/img/flogoo.png" rel="icon">
@@ -15,9 +16,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@400;500;600;700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,250 +28,113 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Arsha
-  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-
-
-
 </head>
 
 <body class="index-page">
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment below if you wish to use an image logo -->
-        <img src="assets/img/flogoo.png" alt="">
+  <!-- Header -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/flogoo.png" alt="FinSync Logo">
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li class="dropdown"><a href="#hero"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#pitchvideo">Pitch Video</a></li>
-              <li><a href="#devteam">Our Dev Team</a></li>
-              <li><a href="#ganttchart">Our Gantt Chart</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="requirements.html"><span>Requirements</span> <i
-                class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#partnerintroandbg">Partner Introduction and Project background</a></li>
-              <li><a href="#projectgoals">Project Goals</a></li>
-              <li><a href="#reqgathering">Requirement gathering</a></li>
-              <li><a href="#personas">Personas</a></li>
-              <li><a href="#usecases">Use Cases</a></li>
-              <li><a href="#moscow">MoSCoW Requirements List</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="#"><span>Research</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#relatedprojects">Related Projects Review</a></li>
-              <li><a href="#technologyreview">Technology Review</a></li>
-              <li><a href="#summary">A summary of our technical decisions</a></li>
-              <li><a href="#references">References</a></li>
-            </ul>
-          </li>
-
-
-          <li class="dropdown"><a href="uidesign.html"><span>UI Design</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#sketches">Sketches</a></li>
-              <li><a href="#wireframes">Wireframes</a></li>
-            </ul>
-          </li>
-
-          <li class="dropdown"><a href="#"><span>System Design</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="architecture.html">System architecture diagram</a></li>
-              <li><a href="#datastorage">Data storage</a></li>
-            </ul>
-          </li>
-
-          <li class="dropdown"><a href="#"><span>Implementation</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="implementation-frontend.html">Frontend Code</a></li>
-              <li><a href="implementation-backend.html">Backend Code</a></li>
-            </ul>
-          </li>
-
-          <li class="dropdown"><a href="#"><span>Testing</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#testingstrategy">Testing Strategy</a></li>
-              <li><a href="#unit-integration">Unit and integration testing</a></li>
-              <li><a href="#user-acceptance">User acceptance testing</a></li>
-            </ul>
-          </li>
-
-          <li class="dropdown"><a href="#"><span>Evaluation</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#summary-achievements">Summary of achievements</a></li>
-              <li><a href="#critical-evalutation">Critical evaluation of the project</a></li>
-              <li><a href="#future-work">Future Work</a></li>
-            </ul>
-          </li>
-
-          <li class="dropdown"><a href="#"><span>Appendices</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#user-manual">User Manual</a></li>
-              <li><a href="#deployment-manual">Deployment manual</a></li>
-              <li><a href="#legal">Legal issues and processes</a></li>
-              <li><a href="#deployment-blog">Development Blog</a></li>
-              <li><a href="#monthly-video">Monthly Video</a></li>
-
-            </ul>
-          </li>
+            <li><a href="index.html">Home</a></li>
 
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
     </div>
   </header>
 
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-
+    <section id="hero" class="hero dark-background">
       <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
-            <h1>FinSync - Team 17</h1>
-            <p>Revolutionizing Financial Reporting at Chanel​</p>
-          </div>
-          <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
-            <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
-          </div>
-        </div>
+        <h1>System Design</h1>
+        <p>Discover how FinSync’s system architecture empowers speed, scale, and stability.</p>
       </div>
-
+    </section>
     </section><!-- /Hero Section -->
 
-    <!-- Clients Section -->
-    <section id="clients" class="clients section light-background">
-
-      <div class="container" data-aos="zoom-in">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 2,
-                  "spaceBetween": 40
-                },
-                "480": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 60
-                },
-                "640": {
-                  "slidesPerView": 4,
-                  "spaceBetween": 80
-                },
-                "992": {
-                  "slidesPerView": 5,
-                  "spaceBetween": 120
-                },
-                "1200": {
-                  "slidesPerView": 6,
-                  "spaceBetween": 120
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/Microsoft_Azure_Logo.svg.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/ucl.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/chanel.png" class="img-fluid" alt=""></div>
-          </div>
-
-        </div>
-
-    </section><!-- /Clients Section -->
-
+   
+    
     <section id="architecture" class="section light-background">
       <div class="container">
         <h1>System Architecture Diagram</h1>
-        <img src="assets/img/architecture.png" class="img-fluid animated" alt="System Architecture Diagram of the Project">
+        <img src="assets/img/architecture.png" class="img-fluid animated"
+          alt="System Architecture Diagram of the Project">
         <br /><br />
-        < <h2>1. Next.js Web App</h2>
-          <ul>
-            <li><strong>Role:</strong> Front-end interface for user interaction.</li>
-            <li><strong>Key Responsibilities:</strong>
-              <ul>
-                <li>Provides pages for user interaction: Dashboard, Settings, Upload, and Login/Sign-Up.</li>
-                <li>Handles user authentication via Microsoft Authentication Library (MSAL).</li>
-                <li>Passes user inputs (e.g., graph type, uploaded files) to Azure Functions for processing.</li>
-                <li>Displays processed data and graphs retrieved from Azure Data Explorer.</li>
-              </ul>
-            </li>
-          </ul>
+        <h2>1. Next.js Web App</h2>
+        <ul>
+          <li><strong>Role:</strong> Front-end interface for user interaction.</li>
+          <li><strong>Key Features:</strong>
+            <ul>
+              <li>Provides pages for user interaction: Dashboard, Settings, Upload, and Login/Sign-Up.</li>
+              <li>Handles user authentication via Microsoft Authentication Library (MSAL).</li>
+              <li>Passes user inputs (e.g., graph type, uploaded files) to Azure Functions for processing.</li>
+              <li>Displays processed data and graphs retrieved from Azure Data Explorer.</li>
+            </ul>
+          </li>
+        </ul>
 
-          <h2>2. Azure Blob Storage</h2>
-          <ul>
-            <li><strong>Role:</strong> Scalable storage solution for uploaded files and generated spreadsheets.</li>
-            <li><strong>Key Responsibilities:</strong>
-              <ul>
-                <li>Stores files uploaded by users through the Upload Page.</li>
-                <li>Acts as a trigger for the Excel Processing Function when a new file is uploaded.</li>
-                <li>Stores processed spreadsheets generated by the Excel Processing Function.</li>
-              </ul>
-            </li>
-          </ul>
+        <h2>2. Azure Blob Storage</h2>
+        <ul>
+          <li><strong>Role:</strong> Scalable storage solution for uploaded files and generated spreadsheets.</li>
+          <li><strong>Key Features:</strong>
+            <ul>
+              <li>Stores files uploaded by users through the Upload Page.</li>
+              <li>Acts as a trigger for the Excel Processing Function when a new file is uploaded.</li>
+              <li>Stores processed spreadsheets generated by the Excel Processing Function.</li>
+            </ul>
+          </li>
+        </ul>
 
-          <h2>3. Azure Functions</h2>
-          <ul>
-            <li><strong>Role:</strong> Serverless compute capabilities to process data and handle API requests.</li>
-            <li><strong>Key Responsibilities:</strong>
-              <ul>
-                <li><strong>Graph API Endpoint:</strong> Queries Azure Data Explorer to retrieve data for graphs and key
-                  metrics.</li>
-                <li><strong>Settings API Endpoint:</strong> Reruns Excel processing based on user-defined settings
-                  (e.g.,
-                  annual planned spend per region/division).</li>
-                <li><strong>Excel Processing Function:</strong> Processes uploaded Excel files and saves the results
-                  back
-                  to Azure Blob Storage.</li>
-              </ul>
-            </li>
-          </ul>
+        <h2>3. Azure Functions</h2>
+        <ul>
+          <li><strong>Role:</strong> Serverless compute capabilities to process data and handle API requests.</li>
+          <li><strong>Key Features:</strong>
+            <ul>
+              <li><strong>Graph API Endpoint:</strong> Queries Azure Data Explorer to retrieve data for graphs and key
+                metrics.</li>
+              <li><strong>Excel Processing Function:</strong> Processes uploaded Excel files and saves the results
+                back to Azure Blob Storage. (more explanations in the backend section)</li>
+              <li><strong>Query Function:</strong> Handles Natural Language queries and passes them to the LangChain
+                Agent
+                along with the summary spreadsheet generated by the Excel Processing Function.</li>
+            </ul>
+          </li>
+        </ul>
 
-          <h2>4. Azure Data Explorer</h2>
-          <ul>
-            <li><strong>Role:</strong> Queryable data source for visualizing and analyzing data.</li>
-            <li><strong>Key Responsibilities:</strong>
-              <ul>
-                <li>Stores processed data from Excel files for querying and visualization.</li>
-                <li>Provides data to the Graph API Endpoint for building graphs and key metrics.</li>
-                <li>Enables efficient querying of large datasets for real-time insights.</li>
-              </ul>
-            </li>
-          </ul>
+        <h2>4. Azure Data Explorer</h2>
+        <ul>
+          <li><strong>Role:</strong> Queryable data source for visualizing and analyzing data.</li>
+          <li><strong>Key Features:</strong>
+            <ul>
+              <li>Stores processed data from Excel files for querying and visualization.</li>
+              <li>Provides data to the Graph API Endpoint for building graphs and key metrics.</li>
+              <li>Enables efficient querying of large datasets for real-time insights.</li>
+            </ul>
+          </li>
+        </ul>
+        <h1>Data Processing Flow</h1>
+        <p>The data processing flow in our system is as follows:</p>
+        <ol>
+          <li>The user uploads an Excel file through the Next.js Web App.</li>
+          <li>The uploaded file is stored in Azure Blob Storage.</li>
+          <li>This triggers the BlobTriggerFunction in Azure Functions.</li>
+          <li>The BlobTriggerFunction processes the Excel file, extracting relevant data and generating a summary
+            spreadsheet.</li>
+          <li>The processed data is then stored in Azure Data Explorer for querying and visualization.</li>
+          <li>The user can query the data using natural language through the Query Function, which interacts with the
+            LangChain Agent.</li>
       </div>
     </section>
 
 
     <footer id="footer" class="footer">
-
-
-
       <div class="container footer-top">
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6 footer-about">
